@@ -1,4 +1,4 @@
-# film-chooser-frontend
+# filim-frontend
 Frontend for personal film picking web app
 
 I often spend far too long deciding on films to watch.  Why not alleviate the pain!

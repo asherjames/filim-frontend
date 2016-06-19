@@ -6,6 +6,7 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 
 import Header from './components/Header';
 import Footer from './components/Footer';
+import GenreSelector from './components/GenreSelector';
 
 injectTapEventPlugin();
 

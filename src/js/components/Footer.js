@@ -8,6 +8,7 @@ const footerStyle = {
 	right: 0,
 	marginBottom: '5px',
 	fontFamily: 'Roboto',
+	fontSize: '85%',
 	opacity: 0.5
 };
 

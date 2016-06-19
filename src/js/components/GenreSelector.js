@@ -1,23 +1,21 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
 import DropDownMenu from 'material-ui/DropDownMenu';
 import MenuItem from 'material-ui/MenuItem';
 
-export default class GenreSelector extends React.Component {
+const GenreSelector = ({onChange, genres}) => (
+	<DropDownMenu maxHeight={25} onChange={onChange}>
+		{genres.map(genre => {
+			<MenuItem value={genre.name} key={genre.id} primaryText={genre.name}/>
+		})}
+	</DropDownMenu>
+);
 
-	constructor() {
-		super();
-		this.state = {
-			genres: [],
-			value: ""
-		};
-	}
+GenreSelector.propTypes = {
+	onChange: PropTypes.func.isRequired,
+	genres: PropTypes.arrayOf(PropTypes.shape({
+		id: PropTypes.number.isRequired,
+		name: PropTypes.string.isRequired
+	}).isRequired).isRequired
+};
 
-	handleClick = (event, index, value) => {this.setState({value})};
-
-	render() {
-		return(
-			<DropDownMenu maxHeight={25} value={this.state.value} onChange={this.handleClick}>
-			</DropDownMenu>
-		)
-	}
-}
+export default GenreSelector
