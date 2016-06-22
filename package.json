@@ -1,5 +1,5 @@
 {
-  "name": "movee",
+  "name": "filim",
   "version": "0.0.1",
   "description": "Small webapp to assist with film-watching decisions",
   "main": "index.js",
@@ -18,6 +18,7 @@
     "webpack-dev-server": "^1.14.1"
   },
   "dependencies": {
+    "isomorphic-fetch": "^2.2.1",
     "material-ui": "^0.15.0",
     "react": "^15.1.0",
     "react-dom": "^15.1.0",
