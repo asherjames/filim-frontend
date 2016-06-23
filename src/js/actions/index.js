@@ -1,3 +1,5 @@
+import fetch from 'isomorphic-fetch'
+
 export const REQUEST_GENRES = 'REQUEST_GENRES'
 export const RECEIVE_GENRES = 'RECEIVE_GENRES'
 
@@ -15,5 +17,10 @@ export function receiveGenres(json) {
 }
 
 export function fetchGenres() {
-	// body...
+	return dispatch => {
+		dispatch(requestGenres())
+		return fetch('localhost:3000/filim-api/genres')
+			.then(response => response.json())
+			.then(json => dispatch(receiveGenres(json)))
+	}
 }
