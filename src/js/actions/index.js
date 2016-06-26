@@ -12,7 +12,7 @@ export function requestGenres() {
 export function receiveGenres(json) {
 	return {
 		type: RECEIVE_GENRES,
-		genres: json.data.children.map(child => child.data)
+		genres: json
 	}
 }
 
