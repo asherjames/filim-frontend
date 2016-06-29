@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 const footerStyle = {
 	position: 'fixed',
@@ -10,7 +10,7 @@ const footerStyle = {
 	fontFamily: 'Roboto',
 	fontSize: '85%',
 	opacity: 0.5
-};
+}
 
 const Footer = () => (
 	<footer style={footerStyle}>
@@ -18,6 +18,6 @@ const Footer = () => (
 		Powered by themoviedb.org API
 		</a>
 	</footer>
-);
+)
 
-export default Footer;
+export default Footer

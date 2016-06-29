@@ -5,7 +5,8 @@ import reducer from './reducers'
 
 export default function configureStore() {
 	const initialState = {
-		genres: []
+		genres: [],
+		isFetchingGenres: false
 	}
 
 	const store = createStore(

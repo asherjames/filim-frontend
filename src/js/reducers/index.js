@@ -1,11 +1,21 @@
 import { combineReducers } from 'redux'
-import { REQUEST_GENRES, RECEIVE_GENRES } from '../actions'
+import { FETCH_GENRES, FETCH_GENRES_ERROR, RECEIVE_GENRES } from '../actions/actions'
 
 function reducer(state, action) {
 	switch (action.type) {
 		case RECIEVE_GENRES:
 			return Object.assign({}, state, {
-				genres: actions.genres
+				genres: action.payload, 
+				isFetchingGenres: false
+			})
+		case FETCH_GENRES:
+			return Object.assign({}, state, {
+				isFetchingGenres: true
+			})
+		case FETCH_GENRES_ERROR:
+			return Object.assign({}, state, {
+				isFetchingGenres: false,
+
 			})
 		default:
 			return state

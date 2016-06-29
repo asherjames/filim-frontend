@@ -10,10 +10,6 @@ import GenreSelector from './components/GenreSelector'
 
 export default class App extends Component {
 
-	componentWillMount() {
-		this.props.dispatch(fetchGenres())
-	}
-
 	render() {
 		return(
 			<MuiThemeProvider muiTheme={getMuiTheme()}>
@@ -24,8 +20,4 @@ export default class App extends Component {
 			</MuiThemeProvider>
 		)
 	}
-}
-
-function mapStateToProps(state) {
-	const { genres } = state
 }
