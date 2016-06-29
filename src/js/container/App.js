@@ -3,12 +3,16 @@ import { connect } from 'react-redux'
 import getMuiTheme from 'material-ui/styles/getMuiTheme'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 
-import { fetchGenres } from '../actions'
-import Header from './components/Header';
-import Footer from './components/Footer';
-import GenreSelector from './components/GenreSelector'
+import { fetchGenres } from '../actions/actions'
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import GenreSelector from '../components/GenreSelector'
 
 export default class App extends Component {
+
+	componentDidMount() {
+		this.props.store.dispatch(fetchGenres())
+	}	
 
 	render() {
 		return(

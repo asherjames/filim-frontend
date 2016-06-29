@@ -29,10 +29,10 @@ export function fetchGenres() {
 		dispatch(fetchGenres())
 		axios.get("http://localhost:3000/filim-api/genres")
 			.then((response) => {
-				dispatch({receiveGenres(response.data)})
+				dispatch(receiveGenres(response.data))
 			})
 			.catch((err) => {
-				dispatch({fetchGenresError(err)})
+				dispatch(fetchGenresError(err))
 			})
 	}
 }

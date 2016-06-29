@@ -3,7 +3,7 @@ import { FETCH_GENRES, FETCH_GENRES_ERROR, RECEIVE_GENRES } from '../actions/act
 
 function reducer(state, action) {
 	switch (action.type) {
-		case RECIEVE_GENRES:
+		case RECEIVE_GENRES:
 			return Object.assign({}, state, {
 				genres: action.payload, 
 				isFetchingGenres: false
