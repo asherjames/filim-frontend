@@ -10,7 +10,7 @@ import GenreSelector from './components/GenreSelector'
 
 export default class App extends Component {
 
-	componentDidMount() {
+	componentWillMount() {
 		this.props.dispatch(fetchGenres())
 	}
 

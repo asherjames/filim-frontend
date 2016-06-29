@@ -1,4 +1,4 @@
-import fetch from 'isomorphic-fetch'
+import axios from 'axios'
 
 export const REQUEST_GENRES = 'REQUEST_GENRES'
 export const RECEIVE_GENRES = 'RECEIVE_GENRES'
