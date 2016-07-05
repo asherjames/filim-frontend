@@ -1,5 +1,5 @@
-import thunk from 'redux-thunk'
-import logger from 'redux-logger'
+import thunkMiddleware from 'redux-thunk'
+import createLogger from 'redux-logger'
 import { applyMiddleware, createStore } from 'redux'
 import reducer from '../reducers/Reducers'
 
@@ -12,7 +12,10 @@ export default function configureStore() {
 	const store = createStore(
 		reducer,
 		initialState,
-		applyMiddleware(thunk, logger)
+		applyMiddleware(
+			thunkMiddleware, 
+			createLogger()
+		)
 	)
 
 	return store
