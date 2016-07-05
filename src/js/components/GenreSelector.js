@@ -11,7 +11,6 @@ const GenreSelector = ({onChange, genres}) => (
 )
 
 GenreSelector.propTypes = {
-	onChange: PropTypes.func.isRequired,
 	genres: PropTypes.arrayOf(PropTypes.shape({
 		id: PropTypes.number.isRequired,
 		name: PropTypes.string.isRequired
