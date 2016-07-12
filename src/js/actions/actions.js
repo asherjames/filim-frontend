@@ -27,7 +27,7 @@ export function fetchGenresError(err) {
 export function fetchGenres() {
 	return (dispatch) => {
 		dispatch(beginFetchGenres())
-		axios.get("http://localhost:3000/filim-api/genres")
+		axios.get("http://localhost:3000/filim-api/movies/genres")
 			.then((response) => {
 				dispatch(receiveGenres(response.data))
 			})
