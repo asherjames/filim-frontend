@@ -11,24 +11,24 @@ import TvMovieRadioButton from '../components/TvMovieRadioButton'
 
 export default class App extends Component {
 
-	componentDidMount() {
-		this.context.store.dispatch(fetchGenres())
-	}	
+    componentDidMount() {
+        this.context.store.dispatch(fetchGenres())
+    }   
 
-	render() {
-		return(
-			<MuiThemeProvider muiTheme={getMuiTheme()}>
-				<div>
-					<Header/>
-					<GenreList/>
-					<TvMovieRadioButton/>
-					<Footer/>		
-				</div>
-			</MuiThemeProvider>
-		)
-	}
+    render() {
+        return(
+            <MuiThemeProvider muiTheme={getMuiTheme()}>
+                <div>
+                    <Header/>
+                    <GenreList/>
+                    <TvMovieRadioButton/>
+                    <Footer/>       
+                </div>
+            </MuiThemeProvider>
+        )
+    }
 }
 
 App.contextTypes = {
-	store: React.PropTypes.object
+    store: React.PropTypes.object
 }

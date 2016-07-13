@@ -4,19 +4,19 @@ import { applyMiddleware, createStore } from 'redux'
 import reducer from '../reducers/Reducers'
 
 export default function configureStore() {
-	const initialState = {
-		genres: [],
-		isFetchingGenres: false
-	}
+    const initialState = {
+        genres: [],
+        isFetchingGenres: false
+    }
 
-	const store = createStore(
-		reducer,
-		initialState,
-		applyMiddleware(
-			thunkMiddleware, 
-			createLogger()
-		)
-	)
+    const store = createStore(
+        reducer,
+        initialState,
+        applyMiddleware(
+            thunkMiddleware, 
+            createLogger()
+        )
+    )
 
-	return store
+    return store
 }
