@@ -3,6 +3,7 @@ import axios from 'axios'
 export const FETCH_GENRES = 'FETCH_GENRES'
 export const FETCH_GENRES_ERROR = 'FETCH_GENRES_ERROR'
 export const RECEIVE_GENRES = 'RECEIVE_GENRES'
+export const TOGGLE_TV_MOVIE = 'TOGGLE_TV_MOVIE'
 
 export function beginFetchGenres() {
 	return {
@@ -34,5 +35,12 @@ export function fetchGenres() {
 			.catch((err) => {
 				dispatch(fetchGenresError(err))
 			})
+	}
+}
+
+export function toggleTvMovie(value) {
+	return {
+		type: TOGGLE_TV_MOVIE,
+		payload: value
 	}
 }

@@ -17,6 +17,10 @@ function reducer(state, action) {
 			return Object.assign({}, state, {
 				isFetchingGenres: false
 			})
+		case TOGGLE_TV_MOVIE:
+			return Object.assign({}, state, {
+				tvOrMovie: action.payload
+			})
 		default:
 			return state
 	}

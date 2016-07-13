@@ -1,16 +1,18 @@
 import React, {PropTypes} from 'react'
 import {RadioButton, RadioButtonGroup} from 'material-ui/RadioButton'
 
-const TvMovieRadioButton = () => (
-	<RadioButtonGroup name="radio">
-		<RadioButton
-			value="movie"
-			label="Movies"
-		/>
-		<RadioButton
-			value="tv"
-			label="TV"
-		/>
+const TvMovieRadioButton = ({ onChangeCb }) => (
+	<RadioButtonGroup 
+		onChange= {(object, value) => onChangeCb(value)}
+		name="radio">
+			<RadioButton
+				value="movie"
+				label="Movies"
+			/>
+			<RadioButton
+				value="tv"
+				label="TV"
+			/>
 	</RadioButtonGroup>
 )
 

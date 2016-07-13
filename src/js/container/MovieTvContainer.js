@@ -8,3 +8,7 @@ const mapDispatchToProps = (dispatch) => {
 		}
 	}
 }
+
+const MovieTvContainer = connect(null, mapDispatchToProps)(TvMovieRadioButton)
+
+export default MovieTvContainer
