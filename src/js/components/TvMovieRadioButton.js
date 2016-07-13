@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {PropTypes} from 'react'
 import {RadioButton, RadioButtonGroup} from 'material-ui/RadioButton'
 
 const TvMovieRadioButton = () => (
@@ -13,5 +13,9 @@ const TvMovieRadioButton = () => (
 		/>
 	</RadioButtonGroup>
 )
+
+TvMovieRadioButton.propTypes = {
+	onChange: PropTypes.func.isRequired
+}
 
 export default TvMovieRadioButton
