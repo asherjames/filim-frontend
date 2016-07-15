@@ -1,9 +1,10 @@
 import { connect } from 'react-redux'
+import { toggleTvMovie } from '../actions/actions'
 import TvMovieRadioButton from '../components/TvMovieRadioButton'
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        onChange: (value) => {
+        onChangeCb: (value) => {
             dispatch(toggleTvMovie(value))
         }
     }

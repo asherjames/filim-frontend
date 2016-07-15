@@ -1,5 +1,8 @@
 import { combineReducers } from 'redux'
-import { FETCH_GENRES, FETCH_GENRES_ERROR, RECEIVE_GENRES } from '../actions/actions'
+import { FETCH_GENRES, 
+         FETCH_GENRES_ERROR, 
+         RECEIVE_GENRES,
+         TOGGLE_TV_MOVIE } from '../actions/actions'
 
 function reducer(state, action) {
     switch (action.type) {

@@ -17,7 +17,7 @@ const TvMovieRadioButton = ({ onChangeCb }) => (
 )
 
 TvMovieRadioButton.propTypes = {
-    onChange: PropTypes.func.isRequired
+    onChangeCb: PropTypes.func.isRequired
 }
 
 export default TvMovieRadioButton

@@ -6,7 +6,8 @@ import reducer from '../reducers/Reducers'
 export default function configureStore() {
     const initialState = {
         genres: [],
-        isFetchingGenres: false
+        isFetchingGenres: false,
+        tvOrMovie: "movie"
     }
 
     const store = createStore(

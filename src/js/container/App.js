@@ -7,7 +7,7 @@ import { fetchGenres } from '../actions/actions'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import GenreList from './GenreList'
-import TvMovieRadioButton from '../components/TvMovieRadioButton'
+import MovieTvContainer from './MovieTvContainer'
 
 export default class App extends Component {
 
@@ -21,7 +21,7 @@ export default class App extends Component {
                 <div>
                     <Header/>
                     <GenreList/>
-                    <TvMovieRadioButton/>
+                    <MovieTvContainer/>
                     <Footer/>       
                 </div>
             </MuiThemeProvider>
