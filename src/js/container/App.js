@@ -6,8 +6,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import { fetchGenres } from '../actions/actions'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
-import GenreList from './GenreList'
-import MovieTvContainer from './MovieTvContainer'
+import MainTabs from '../components/MainTabs'
 
 export default class App extends Component {
 
@@ -20,8 +19,7 @@ export default class App extends Component {
             <MuiThemeProvider muiTheme={getMuiTheme()}>
                 <div>
                     <Header/>
-                    <GenreList/>
-                    <MovieTvContainer/>
+                    <MainTabs/>
                     <Footer/>       
                 </div>
             </MuiThemeProvider>
