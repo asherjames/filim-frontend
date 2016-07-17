@@ -2,7 +2,8 @@ import { combineReducers } from 'redux'
 import { FETCH_GENRES, 
          FETCH_GENRES_ERROR, 
          RECEIVE_GENRES,
-         TOGGLE_TV_MOVIE } from '../actions/actions'
+         TOGGLE_TV_MOVIE,
+         GENRE_SELECTED } from '../actions/actions'
 
 function reducer(state, action) {
     switch (action.type) {
@@ -23,6 +24,10 @@ function reducer(state, action) {
         case TOGGLE_TV_MOVIE:
             return Object.assign({}, state, {
                 tvOrMovie: action.payload
+            })
+        case GENRE_SELECTED:
+            return Object.assign({}, state, {
+                selectedGenre: action.payload
             })
         default:
             return state

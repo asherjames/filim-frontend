@@ -7,7 +7,8 @@ export default function configureStore() {
     const initialState = {
         genres: [],
         isFetchingGenres: false,
-        tvOrMovie: "movie"
+        tvOrMovie: "movie",
+        selectedGenre: 0
     }
 
     const store = createStore(

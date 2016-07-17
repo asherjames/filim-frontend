@@ -4,6 +4,7 @@ export const FETCH_GENRES = 'FETCH_GENRES'
 export const FETCH_GENRES_ERROR = 'FETCH_GENRES_ERROR'
 export const RECEIVE_GENRES = 'RECEIVE_GENRES'
 export const TOGGLE_TV_MOVIE = 'TOGGLE_TV_MOVIE'
+export const GENRE_SELECTED = "GENRE_SELECTED"
 
 export function beginFetchGenres() {
     return {
@@ -42,5 +43,12 @@ export function toggleTvMovie(value) {
     return {
         type: TOGGLE_TV_MOVIE,
         payload: value
+    }
+}
+
+export function genreSelected(id) {
+    return {
+        type: GENRE_SELECTED,
+        payload: id
     }
 }
