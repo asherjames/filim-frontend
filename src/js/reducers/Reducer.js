@@ -1,9 +1,10 @@
 import { combineReducers } from 'redux'
 import * as actType from '../actions/actions'
+import * as asyncType from '../actions/asyncActions'
 
-function reducer(state, action) {
+export default function reducer(state, action) {
     switch (action.type) {
-        case actType.RECEIVE_GENRES:
+        case asyncType.RECEIVE_GENRES:
             console.log('received genres: ' + action.payload)
             return Object.assign({}, state, {
                 genres: action.payload, 
@@ -37,5 +38,3 @@ function reducer(state, action) {
             return state
     }
 }
-
-export default reducer
