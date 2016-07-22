@@ -1,33 +1,37 @@
 import { combineReducers } from 'redux'
-import { FETCH_GENRES, 
-         FETCH_GENRES_ERROR, 
-         RECEIVE_GENRES,
-         TOGGLE_TV_MOVIE,
-         GENRE_SELECTED } from '../actions/actions'
+import * as actType from '../actions/actions'
 
 function reducer(state, action) {
     switch (action.type) {
-        case RECEIVE_GENRES:
+        case actType.RECEIVE_GENRES:
             console.log('received genres: ' + action.payload)
             return Object.assign({}, state, {
                 genres: action.payload, 
                 isFetchingGenres: false
             })
-        case FETCH_GENRES:
+        case actType.FETCH_GENRES:
             return Object.assign({}, state, {
                 isFetchingGenres: true
             })
-        case FETCH_GENRES_ERROR:
+        case actType.FETCH_GENRES_ERROR:
             return Object.assign({}, state, {
                 isFetchingGenres: false
             })
-        case TOGGLE_TV_MOVIE:
+        case actType.TOGGLE_TV_MOVIE:
             return Object.assign({}, state, {
                 tvOrMovie: action.payload
             })
-        case GENRE_SELECTED:
+        case actType.GENRE_SELECTED:
             return Object.assign({}, state, {
                 selectedGenre: action.payload
+            })
+        case actType.TO_RELEASE_CHANGED:
+            return Object.assign({}, state, {
+                toReleaseYear: action.payload
+            })
+        case actType.FROM_RELEASE_CHANGED:
+            return Object.assign({}, state, {
+                fromReleaseYear: action.payload
             })
         default:
             return state
