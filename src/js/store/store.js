@@ -7,6 +7,7 @@ export default function configureStore() {
     const initialState = {
         genres: [],
         isFetchingGenres: false,
+        isFetchingYears: false,
         tvOrMovie: "movie",
         selectedGenre: 0,
         years: [],

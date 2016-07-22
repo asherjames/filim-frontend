@@ -1,15 +1,18 @@
 import axios from 'axios'
 
+export const BEGIN_FETCH_GENRES = 'BEGIN_FETCH_GENRES'
 export const FETCH_GENRES = 'FETCH_GENRES'
 export const FETCH_GENRES_ERROR = 'FETCH_GENRES_ERROR'
 export const RECEIVE_GENRES = 'RECEIVE_GENRES'
+
+export const BEGIN_FETCH_YEARS = 'BEGIN_FETCH_YEARS'
 export const FETCH_YEARS = 'FETCH_YEARS'
 export const FETCH_YEARS_ERROR = 'FETCH_YEARS_ERROR'
 export const RECEIVE_YEARS = 'RECEIVE_YEARS'
 
 export function beginFetchGenres() {
     return {
-        type: FETCH_GENRES
+        type: BEGIN_FETCH_GENRES
     }
 }
 
@@ -40,10 +43,23 @@ export function fetchGenres() {
     }
 }
 
+export function beginFetchReleaseYears() {
+    return {
+        type: BEGIN_FETCH_YEARS
+    }
+}
+
 export function receiveYears(json) {
     return {
         type: RECEIVE_YEARS,
         payload: json
+    }
+}
+
+export function fetchReleaseYearsError(err) {
+    return {
+        type: FETCH_YEARS_ERROR,
+        payload: err
     }
 }
 
