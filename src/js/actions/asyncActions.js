@@ -5,11 +5,6 @@ export const FETCH_GENRES = 'FETCH_GENRES'
 export const FETCH_GENRES_ERROR = 'FETCH_GENRES_ERROR'
 export const RECEIVE_GENRES = 'RECEIVE_GENRES'
 
-export const BEGIN_FETCH_YEARS = 'BEGIN_FETCH_YEARS'
-export const FETCH_YEARS = 'FETCH_YEARS'
-export const FETCH_YEARS_ERROR = 'FETCH_YEARS_ERROR'
-export const RECEIVE_YEARS = 'RECEIVE_YEARS'
-
 export function beginFetchGenres() {
     return {
         type: BEGIN_FETCH_GENRES
