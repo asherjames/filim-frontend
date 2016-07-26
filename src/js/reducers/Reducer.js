@@ -3,9 +3,8 @@ import {TOGGLE_TV_MOVIE,
         TO_RELEASE_CHANGED,
         FROM_RELEASE_CHANGED} from '../actions/actions'
 
-export default function reducer(state, action) {
+export default function reducer(state = {}, action) {
     switch (action.type) {
-
         case TOGGLE_TV_MOVIE:
             return Object.assign({}, state, {
                 tvOrMovie: action.payload

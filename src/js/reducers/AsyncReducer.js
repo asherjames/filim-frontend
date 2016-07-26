@@ -3,7 +3,7 @@ import {BEGIN_FETCH_GENRES,
         FETCH_GENRES_ERROR,
         RECEIVE_GENRES} from '../actions/asyncActions'
 
-export default function reducer(state, action) {
+export default function asyncReducer(state = {}, action) {
     switch(action.type) {
         case RECEIVE_GENRES:
             return Object.assign({}, state, {

@@ -4,7 +4,7 @@ import GenreSelector from '../components/GenreSelector'
 
 const mapStateToProps = (state) => {
     return {
-        genres: state.genres
+        genres: state.async.genres
     }
 }
 

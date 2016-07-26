@@ -24,3 +24,5 @@ ReleaseYearSelector.propTypes = {
     onFromYearClick: PropTypes.func.isRequired,
     onToYearClick: PropTypes.func.isRequired
 }
+
+export default ReleaseYearSelector

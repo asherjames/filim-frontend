@@ -5,14 +5,18 @@ import reducer from '../reducers/index'
 
 export default function configureStore() {
     const initialState = {
-        genres: [],
-        isFetchingGenres: false,
-        isFetchingYears: false,
-        tvOrMovie: "movie",
-        selectedGenre: 0,
-        years: [],
-        fromReleaseYear: 0,
-        toReleaseYear: 0
+        async: {
+            genres: [],
+            isFetchingGenres: false,
+            isFetchingYears: false,
+            years: []
+        },
+        std: {
+            tvOrMovie: "movie",
+            selectedGenre: 0,
+            fromReleaseYear: 0,
+            toReleaseYear: 0
+        }
     }
 
     const store = createStore(
