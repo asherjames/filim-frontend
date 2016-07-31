@@ -5,21 +5,20 @@ import reducer from '../reducers/index'
 
 export default function configureStore() {
     const initialState = {
-        async: {
-            genres: [],
-            isFetchingGenres: false,
-            isFetchingYears: false,
-            years: []
+        genreList: {
+            movieGenres: [],
+            tvGenres: [],
+            isFetchingGenres: false
         },
-        std: {
-            tvOrMovie: "movie",
-            selectedGenre: 0,
+        tvOrMovie: "movie",
+        releaseYear: {
             fromReleaseYear: 0,
-            toReleaseYear: 0
+            toReleaseYear: 0,
+            isFetchingYears: false
         }
     }
 
-    const store = createStore(
+    return createStore(
         reducer,
         initialState,
         applyMiddleware(
@@ -27,6 +26,4 @@ export default function configureStore() {
             createLogger()
         )
     )
-
-    return store
 }

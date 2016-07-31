@@ -2,6 +2,7 @@ export const TOGGLE_TV_MOVIE = 'TOGGLE_TV_MOVIE'
 export const GENRE_SELECTED = 'GENRE_SELECTED'
 export const TO_RELEASE_CHANGED = 'TO_RELEASE_CHANGED'
 export const FROM_RELEASE_CHANGED = 'FROM_RELEASE_CHANGED'
+export const SEARCH_CLICKED = 'SEARCH_CLICKED'
 
 export function toggleTvMovie(value) {
     return {
@@ -28,5 +29,11 @@ export function fromReleaseYearChanged(year) {
     return {
         type: FROM_RELEASE_CHANGED,
         payload: year
+    }
+}
+
+export function searchClicked() {
+    return {
+        type: SEARCH_CLICKED
     }
 }

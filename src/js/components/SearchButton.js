@@ -5,8 +5,8 @@ import Search from 'material-ui/svg-icons/action/search'
 const SearchButton = ({onSearchClick}) => (
     <RaisedButton
         label="Search..."
-        labelPosition="after"
         icon={<Search/>}
+        backgroundColor="#00D49E"
         onClick={onSearchClick}
     />
 )

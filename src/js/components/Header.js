@@ -1,10 +1,10 @@
-import React from 'react';
-import Paper from 'material-ui/Paper';
+import React from 'react'
+import Paper from 'material-ui/Paper'
 
 const containerStyle = {
 	display: 'flex',
-    justifyContent: 'center',
-};
+    justifyContent: 'center'
+}
 
 const paperStyle = {
 	height: 150,
@@ -14,13 +14,13 @@ const paperStyle = {
     justifyContent: 'center',
     borderRadius: 5,
 	backgroundColor: '#00D49E'
-};
+}
 
 const textStyle = {
 	fontFamily: 'Fjalla One',
 	fontSize: '400%',
 	color: '#D94536'
-};
+}
 
 const Header = () => (
 	<div style={containerStyle}>
@@ -28,6 +28,6 @@ const Header = () => (
 			<h1 style={textStyle}>Filim</h1>
 		</Paper>	
 	</div>
-);
+)
 
-export default Header;
+export default Header
