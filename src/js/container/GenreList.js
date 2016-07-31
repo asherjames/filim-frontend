@@ -3,8 +3,14 @@ import { genreSelected } from '../actions/actions'
 import GenreSelector from '../components/GenreSelector'
 
 const mapStateToProps = (state) => {
+    let g;
+    if (state.tvOrMovie == "movie") {
+        g = state.genreList.movieGenres
+    } else {
+        g = state.genreList.tvGenres
+    }
     return {
-        genres: state.async.genres
+        genres: g
     }
 }
 

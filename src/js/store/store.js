@@ -8,7 +8,8 @@ export default function configureStore() {
         genreList: {
             movieGenres: [],
             tvGenres: [],
-            isFetchingGenres: false
+            isFetchingMovieGenres: false,
+            isFetchingTvGenres: false
         },
         tvOrMovie: "movie",
         releaseYear: {

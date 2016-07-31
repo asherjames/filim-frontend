@@ -4,7 +4,7 @@ import TvMovieRadioButton from '../components/TvMovieRadioButton'
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        onChangeCb: (value) => {
+        movieTvChange: (value) => {
             dispatch(toggleTvMovie(value))
         }
     }
