@@ -1,15 +1,12 @@
-import {TOGGLE_TV_MOVIE,
-        GENRE_SELECTED,
-        TO_RELEASE_CHANGED,
-        FROM_RELEASE_CHANGED,
-        SEARCH_CLICKED} from '../actions/actions'
+import {
+    GENRE_SELECTED,
+    TO_RELEASE_CHANGED,
+    FROM_RELEASE_CHANGED,
+    SEARCH_CLICKED
+} from '../actions/actions'
 
 export default function reducer(state = {}, action) {
     switch (action.type) {
-        case TOGGLE_TV_MOVIE:
-            return Object.assign({}, state, {
-                tvOrMovie: action.payload
-            })
         case GENRE_SELECTED:
             return Object.assign({}, state, {
                 selectedGenre: action.payload

@@ -1,5 +1,5 @@
-import { connect } from 'react-redux'
-import { toggleTvMovie } from '../actions/actions'
+import {connect} from 'react-redux'
+import {toggleTvMovie} from '../actions/actions'
 import TvMovieRadioButton from '../components/TvMovieRadioButton'
 
 const mapDispatchToProps = (dispatch) => {

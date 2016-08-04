@@ -1,8 +1,8 @@
-import { combineReducers } from 'redux'
-import std from './Reducer'
-import async from './AsyncReducer'
+import {combineReducers} from 'redux'
+import genreReducer from './GenreReducer'
 
 export default combineReducers({
-    async,
-    std
+    genres: genreReducer,
+    tvOrMovie: tvMovieReducer,
+
 })

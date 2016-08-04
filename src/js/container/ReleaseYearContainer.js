@@ -4,7 +4,7 @@ import ReleaseYearSelector from '../components/ReleaseYearSelector'
 
 const mapStateToProps = (state) => {
     return {
-        years: state.async.years
+        years: state.releaseYear.years
     }
 }
 

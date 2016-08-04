@@ -12,7 +12,7 @@ const MainTabs = () => (
             <ReleaseYearContainer/>
         </Tab>
         <Tab label="Advanced">
-        </Tab>        
+        </Tab>
     </Tabs>
 )
 

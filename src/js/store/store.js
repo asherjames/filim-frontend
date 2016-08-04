@@ -5,7 +5,7 @@ import reducer from '../reducers/index'
 
 export default function configureStore() {
     const initialState = {
-        genreList: {
+        genres: {
             movieGenres: [],
             tvGenres: [],
             isFetchingMovieGenres: false,
@@ -13,6 +13,7 @@ export default function configureStore() {
         },
         tvOrMovie: "movie",
         releaseYear: {
+            years: 0,
             fromReleaseYear: 0,
             toReleaseYear: 0,
             isFetchingYears: false

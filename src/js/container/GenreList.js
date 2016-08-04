@@ -5,9 +5,9 @@ import GenreSelector from '../components/GenreSelector'
 const mapStateToProps = (state) => {
     let g;
     if (state.tvOrMovie == "movie") {
-        g = state.genreList.movieGenres
+        g = state.genres.movieGenres
     } else {
-        g = state.genreList.tvGenres
+        g = state.genres.tvGenres
     }
     return {
         genres: g

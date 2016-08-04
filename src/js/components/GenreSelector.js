@@ -3,9 +3,9 @@ import DropDownMenu from 'material-ui/DropDownMenu'
 import MenuItem from 'material-ui/MenuItem'
 
 const GenreSelector = ({genres, onGenreClick}) => (
-    <DropDownMenu 
-        onChange = {(event, key, payload) => onGenreClick(payload)}>
-        {genres.map(genre => 
+    <DropDownMenu
+        onChange={(event, key, payload) => onGenreClick(payload)}>
+        {genres.map(genre =>
             <MenuItem value={genre.id} key={genre.id} primaryText={genre.name}/>
         )}
     </DropDownMenu>

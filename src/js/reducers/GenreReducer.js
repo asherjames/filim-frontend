@@ -5,7 +5,14 @@ import {
     RECEIVE_GENRES
 } from '../actions/asyncActions'
 
-export default function asyncReducer(state = {}, action) {
+let initialState = {
+    movieGenres: [],
+    tvGenres: [],
+    isFetchingMovieGenres: false,
+    isFetchingTvGenres: false
+}
+
+export default function genreReducer(state = initialState, action) {
     switch (action.type) {
         case RECEIVE_GENRES:
             return Object.assign({}, state, {
