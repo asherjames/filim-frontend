@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { genreSelected } from '../actions/actions'
+import { genreSelected } from '../actions/GenreActions'
 import GenreSelector from '../components/GenreSelector'
 
 const mapStateToProps = (state) => {

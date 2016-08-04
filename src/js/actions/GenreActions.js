@@ -1,9 +1,14 @@
-import axios from 'axios'
-
+export const GENRE_SELECTED = 'GENRE_SELECTED'
 export const BEGIN_FETCH_GENRES = 'BEGIN_FETCH_GENRES'
-export const FETCH_GENRES = 'FETCH_GENRES'
 export const FETCH_GENRES_ERROR = 'FETCH_GENRES_ERROR'
 export const RECEIVE_GENRES = 'RECEIVE_GENRES'
+
+export function genreSelected(id) {
+    return {
+        type: GENRE_SELECTED,
+        payload: id
+    }
+}
 
 export function beginFetchGenres() {
     return {
@@ -34,39 +39,6 @@ export function fetchGenres() {
             })
             .catch((err) => {
                 dispatch(fetchGenresError(err))
-            })
-    }
-}
-
-export function beginFetchReleaseYears() {
-    return {
-        type: BEGIN_FETCH_YEARS
-    }
-}
-
-export function receiveYears(json) {
-    return {
-        type: RECEIVE_YEARS,
-        payload: json
-    }
-}
-
-export function fetchReleaseYearsError(err) {
-    return {
-        type: FETCH_YEARS_ERROR,
-        payload: err
-    }
-}
-
-export function fetchReleaseYears() {
-    return (dispatch) => {
-        dispatch(beginFetchReleaseYears())
-        axios.get("http://localhost:3000/filim-api/allyears")
-            .then((response) => {
-                dispatch(receiveYears(response.data))
-            })
-            .catch((err) => {
-                dispatch(fetchReleaseYearsError(err))
             })
     }
 }

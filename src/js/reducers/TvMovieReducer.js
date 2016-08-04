@@ -1,4 +1,4 @@
-import TOGGLE_TV_MOVIE from '../actions/actions'
+import TOGGLE_TV_MOVIE from '../actions/TvMovieActions'
 
 let initialState = {
     tvOrMovie: "movie"

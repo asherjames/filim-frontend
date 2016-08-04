@@ -1,5 +1,5 @@
-import { connect } from 'react-redux'
-import { searchClicked } from '../actions/actions'
+import {connect} from 'react-redux'
+import {searchClicked} from '../actions/SearchActions'
 import SearchButton from '../components/SearchButton'
 
 const mapDispatchToProps = (dispatch) => {

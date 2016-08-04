@@ -1,9 +1,9 @@
 import {
-    BEGIN_FETCH_GENRES,
+    GENRE_SELECTED,
     FETCH_GENRES,
     FETCH_GENRES_ERROR,
     RECEIVE_GENRES
-} from '../actions/asyncActions'
+} from '../actions/GenreActions'
 
 let initialState = {
     movieGenres: [],
@@ -14,6 +14,10 @@ let initialState = {
 
 export default function genreReducer(state = initialState, action) {
     switch (action.type) {
+        case GENRE_SELECTED:
+            return Object.assign({}, state, {
+                selectedGenre: action.payload
+            })
         case RECEIVE_GENRES:
             return Object.assign({}, state, {
                 genres: action.payload,

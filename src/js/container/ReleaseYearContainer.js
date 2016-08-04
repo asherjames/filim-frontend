@@ -1,5 +1,5 @@
-import { connect } from 'react-redux'
-import { fromReleaseChanged, toReleaseChanged } from '../actions/actions'
+import {connect} from 'react-redux'
+import {fromReleaseChanged, toReleaseChanged} from '../actions/RelYearActions'
 import ReleaseYearSelector from '../components/ReleaseYearSelector'
 
 const mapStateToProps = (state) => {
