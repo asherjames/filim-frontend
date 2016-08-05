@@ -3,6 +3,7 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 
 import {fetchMovieGenres} from '../actions/GenreActions'
+import {fetchReleaseYears} from '../actions/RelYearActions'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import MainTabs from '../components/MainTabs'
@@ -12,6 +13,7 @@ export default class App extends Component {
 
     componentDidMount() {
         this.context.store.dispatch(fetchMovieGenres())
+        this.context.store.dispatch(fetchReleaseYears())
     }
 
     render() {

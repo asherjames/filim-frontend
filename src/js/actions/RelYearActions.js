@@ -1,5 +1,8 @@
 import axios from 'axios'
 
+
+export const BEGIN_FETCH_YEARS = 'BEGIN_FETCH_YEARS'
+export const RECEIVE_YEARS = 'RECEIVE_YEARS'
 export const TO_RELEASE_CHANGED = 'TO_RELEASE_CHANGED'
 export const FROM_RELEASE_CHANGED = 'FROM_RELEASE_CHANGED'
 
