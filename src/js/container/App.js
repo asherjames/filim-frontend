@@ -1,8 +1,8 @@
-import React, { Component, PropTypes } from 'react'
+import React, {Component, PropTypes} from 'react'
 import getMuiTheme from 'material-ui/styles/getMuiTheme'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 
-import { fetchGenres } from '../actions/asyncActions'
+import {fetchMovieGenres} from '../actions/GenreActions'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import MainTabs from '../components/MainTabs'
@@ -11,17 +11,17 @@ import SearchButtonContainer from './SearchButtonContainer'
 export default class App extends Component {
 
     componentDidMount() {
-        this.context.store.dispatch(fetchGenres())
-    }   
+        this.context.store.dispatch(fetchMovieGenres())
+    }
 
     render() {
-        return(
+        return (
             <MuiThemeProvider muiTheme={getMuiTheme()}>
                 <div>
                     <Header/>
                     <MainTabs/>
                     <SearchButtonContainer/>
-                    <Footer/>       
+                    <Footer/>
                 </div>
             </MuiThemeProvider>
         )

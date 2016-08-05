@@ -2,7 +2,7 @@ import {
     GENRE_SELECTED,
     FETCH_GENRES,
     FETCH_GENRES_ERROR,
-    RECEIVE_GENRES
+    RECEIVE_MOVIE_GENRES
 } from '../actions/GenreActions'
 
 let initialState = {
@@ -18,9 +18,9 @@ export default function genreReducer(state = initialState, action) {
             return Object.assign({}, state, {
                 selectedGenre: action.payload
             })
-        case RECEIVE_GENRES:
+        case RECEIVE_MOVIE_GENRES:
             return Object.assign({}, state, {
-                genres: action.payload,
+                movieGenres: action.payload,
                 isFetchingGenres: false
             })
         case FETCH_GENRES:

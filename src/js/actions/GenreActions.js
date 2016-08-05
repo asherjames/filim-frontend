@@ -1,7 +1,9 @@
+import axios from 'axios'
+
 export const GENRE_SELECTED = 'GENRE_SELECTED'
 export const BEGIN_FETCH_GENRES = 'BEGIN_FETCH_GENRES'
 export const FETCH_GENRES_ERROR = 'FETCH_GENRES_ERROR'
-export const RECEIVE_GENRES = 'RECEIVE_GENRES'
+export const RECEIVE_MOVIE_GENRES = 'RECEIVE_MOVIE_GENRES'
 
 export function genreSelected(id) {
     return {
@@ -18,7 +20,7 @@ export function beginFetchGenres() {
 
 export function receiveGenres(json) {
     return {
-        type: RECEIVE_GENRES,
+        type: RECEIVE_MOVIE_GENRES,
         payload: json
     }
 }
@@ -30,7 +32,7 @@ export function fetchGenresError(err) {
     }
 }
 
-export function fetchGenres() {
+export function fetchMovieGenres() {
     return (dispatch) => {
         dispatch(beginFetchGenres())
         axios.get("http://localhost:3000/filim-api/movies/genres")

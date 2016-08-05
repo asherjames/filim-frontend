@@ -4,7 +4,14 @@ import {
     SEARCH_CLICKED
 } from '../actions/RelYearActions'
 
-export default function reducer(state = {}, action) {
+let initialState = {
+    years: 0,
+    fromReleaseYear: 0,
+    toReleaseYear: 0,
+    isFetchingYears: false
+}
+
+export default function relYearReducer(state = initialState, action) {
     switch (action.type) {
         case TO_RELEASE_CHANGED:
             return Object.assign({}, state, {
