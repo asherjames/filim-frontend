@@ -1,5 +1,5 @@
 import {connect} from 'react-redux'
-import {fromReleaseChanged, toReleaseChanged} from '../actions/RelYearActions'
+import {fromReleaseYearChanged, toReleaseYearChanged} from '../actions/RelYearActions'
 import ReleaseYearSelector from '../components/ReleaseYearSelector'
 
 const mapStateToProps = (state) => {
@@ -11,10 +11,10 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         onFromYearClick: (year) => {
-            dispatch(fromReleaseChanged(year))
+            dispatch(fromReleaseYearChanged(year))
         },
         onToYearClick: (year) => {
-            dispatch(toReleaseChanged(year))
+            dispatch(toReleaseYearChanged(year))
         }
     }
 }
