@@ -17,6 +17,10 @@ export default function configureStore() {
             fromReleaseYear: 0,
             toReleaseYear: 0,
             isFetchingYears: false
+        },
+        search: {
+            isSearching: false,
+            searchResults: []
         }
     }
 
