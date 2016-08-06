@@ -24,7 +24,7 @@ const textStyle = {
 
 const Header = () => (
 	<div style={containerStyle}>
-		<Paper style={paperStyle} zDepth={5} rounded={true}>
+		<Paper style={paperStyle} zDepth={4} rounded={true}>
 			<h1 style={textStyle}>Filim</h1>
 		</Paper>	
 	</div>

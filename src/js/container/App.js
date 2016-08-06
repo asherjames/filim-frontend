@@ -2,6 +2,8 @@ import React, {Component, PropTypes} from 'react'
 import getMuiTheme from 'material-ui/styles/getMuiTheme'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 
+import Paper from 'material-ui/Paper'
+
 import {fetchMovieGenres} from '../actions/GenreActions'
 import {fetchReleaseYears} from '../actions/RelYearActions'
 import Header from '../components/Header'
@@ -19,9 +21,11 @@ export default class App extends Component {
     render() {
         return (
             <MuiThemeProvider muiTheme={getMuiTheme()}>
-                <div>
+                <div style={{textAlign: "center"}}>
                     <Header/>
-                    <MainTabs/>
+                    <Paper style={{width:800, margin: "2em auto"}} zDepth={5} rounded={true}>
+                        <MainTabs/>
+                    </Paper>
                     <SearchButtonContainer/>
                     <Footer/>
                 </div>

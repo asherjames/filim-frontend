@@ -7,9 +7,17 @@ import ReleaseYearContainer from '../container/ReleaseYearContainer'
 const MainTabs = () => (
     <Tabs>
         <Tab label="Basic">
-            <GenreList/>
-            <MovieTvContainer/>
-            <ReleaseYearContainer/>
+            <div className="pure-g">
+                <div className="pure-u-1-3">
+                    <GenreList/>
+                </div>
+                <div className="pure-u-1-3">
+                    <MovieTvContainer/>
+                </div>
+                <div className="pure-u-1-3">
+                    <ReleaseYearContainer/>
+                </div>
+            </div>
         </Tab>
         <Tab label="Advanced">
         </Tab>
