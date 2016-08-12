@@ -12,7 +12,7 @@ export default class ReleaseYearSelector extends React.Component {
         }
     }
 
-    handleFromChange (event, index, value) {
+    handleFromChange(event, index, value) {
         this.setState({fromYear: value})
         this.props.onFromYearClick(value)
     }
@@ -40,7 +40,6 @@ export default class ReleaseYearSelector extends React.Component {
                     )}
                 </DropDownMenu>
             </div>
-
         )
     }
 }
