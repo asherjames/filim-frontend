@@ -8,6 +8,7 @@ export default function configureStore() {
         genres: {
             movieGenres: [],
             tvGenres: [],
+            selectedGenre: 0,
             isFetchingMovieGenres: false,
             isFetchingTvGenres: false
         },
@@ -15,7 +16,7 @@ export default function configureStore() {
         releaseYear: {
             years: [],
             fromReleaseYear: 0,
-            toReleaseYear: 0,
+            toReleaseYear: new Date().getFullYear(),
             isFetchingYears: false
         },
         search: {

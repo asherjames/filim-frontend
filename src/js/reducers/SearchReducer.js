@@ -1,4 +1,4 @@
-import {SEARCH_CLICKED, RECEIVE_SEARCH_RESULTS} from '../actions/SearchActions'
+import * as a from '../actions/SearchActions'
 
 const initialState = {
     isSearching: false,
@@ -7,11 +7,11 @@ const initialState = {
 
 export default function searchReducer(state = initialState, action) {
     switch (action.type) {
-        case SEARCH_CLICKED:
+        case a.SEARCH_CLICKED:
             return Object.assign({}, state, {
                 isSearching: true
             })
-        case RECEIVE_SEARCH_RESULTS:
+        case a.RECEIVE_SEARCH_RESULTS:
             return Object.assign({}, state, {
                 isSearching: false,
                 searchResults: action.payload

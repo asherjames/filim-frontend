@@ -1,4 +1,5 @@
 import axios from 'axios'
+const qs = require('query-string')
 
 export const SEARCH_CLICKED = 'SEARCH_CLICKED'
 export const BEGIN_SEARCH = 'BEGIN_SEARCH'
@@ -26,9 +27,15 @@ export function searchError(err) {
 }
 
 export function searchClicked() {
-    return (dispatch) => {
+    return (dispatch, getState) => {
         dispatch(beginSearch())
-        axios.get("http://localhost:3000/filim-api/search")
+
+        const {tvOrMovie} = getState()
+
+        const {selectedGenre, fromReleaseYear, toReleaseYear} = getState()
+        const queryObj = {selectedGenre, fromReleaseYear, toReleaseYear}
+
+        axios.get("http://localhost:3000/filim-api/search/${tvOrMovie}?" + qs.stringify(queryObj))
             .then((response) => {
                 dispatch(receiveSearchResults(response.data))
             })
