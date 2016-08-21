@@ -36,7 +36,11 @@ export function searchClicked() {
         const fromReleaseYear = getState().releaseYear.fromReleaseYear
         const toReleaseYear = getState().releaseYear.toReleaseYear
 
-        axios.get(`http://localhost:3000/filim-api/search/${tvOrMovie}?` + qs.stringify(queryObj))
+        axios.get(`http://localhost:3000/filim-api/search/${tvOrMovie}?` + qs.stringify({
+                selectedGenre,
+                fromReleaseYear,
+                toReleaseYear
+            }))
             .then((response) => {
                 dispatch(receiveSearchResults(response.data))
             })

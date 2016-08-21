@@ -11,9 +11,30 @@ export default class FilmCard extends React.Component {
 		}
 	}
 
+	handleExpandChange = (expanded) => {
+	    this.setState({expanded: expanded})
+    }
+
 	render() {
 		return(
-			
+			<Card expanded={this.state.expanded} onExpandChange={this.handleExpandChange}>
+                <CardHeader
+                    title={this.props.title}
+                    subtitle={this.props.year}
+                    avatar={this.props.smallImage}
+                    actAsExpander={true}
+                    showExpandableButton={true}
+                />
+                <CardText>
+                    <FlatButton label="More..." onTouchTap={this.handleExpand}/>
+                </CardText>
+			</Card>
 		)
 	}
+}
+
+FilmCard.propTypes = {
+    title: string.isRequired,
+    year: string.isRequired,
+    smallImage: string.isRequired
 }
