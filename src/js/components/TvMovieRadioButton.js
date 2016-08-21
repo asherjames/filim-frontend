@@ -17,7 +17,7 @@ const TvMovieRadioButton = ({movieTvChange}) => (
 )
 
 TvMovieRadioButton.propTypes = {
-    movieTvChange: PropTypes.func.isRequired
+    movieTvChange: func.isRequired
 }
 
 export default TvMovieRadioButton

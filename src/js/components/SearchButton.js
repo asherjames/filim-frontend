@@ -12,7 +12,7 @@ const SearchButton = ({onSearchClick}) => (
 )
 
 SearchButton.propTypes = {
-    onSearchClick: PropTypes.func.isRequired
+    onSearchClick: func.isRequired
 }
 
 export default SearchButton
