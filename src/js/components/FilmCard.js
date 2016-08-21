@@ -26,7 +26,7 @@ export default class FilmCard extends React.Component {
                     showExpandableButton={true}
                 />
                 <CardText>
-                    <FlatButton label="More..." onTouchTap={this.handleExpand}/>
+                    <FlatButton label="More info..." onTouchTap={this.handleExpandChange(true)} disabled={!this.expanded}/>
                 </CardText>
                 <CardMedia
                     expandable={true}
@@ -35,7 +35,7 @@ export default class FilmCard extends React.Component {
                 </CardMedia>
                 <CardTitle title={this.props.title} expandable={true}/>
                 <CardText expandable={true}>
-                    {this.props.text}
+                    {this.props.mainText}
                 </CardText>
 			</Card>
 		)
@@ -47,5 +47,5 @@ FilmCard.propTypes = {
     year: string.isRequired,
     smallImage: string.isRequired,
     largeImage: string.isRequired,
-    text: string.isRequired
+    mainText: string.isRequired
 }
