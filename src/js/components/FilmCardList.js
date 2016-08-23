@@ -17,5 +17,5 @@ export default class FilmCardList extends React.Component {
 }
 
 FilmCardList.propTypes = {
-    films: arrayOf(instanceOf(Film)).isRequired
+    films: PropTypes.arrayOf(instanceOf(Film)).isRequired
 }

@@ -42,7 +42,7 @@ export function searchClicked() {
                 toReleaseYear
             }))
             .then((response) => {
-                dispatch(receiveSearchResults(response.data))
+                dispatch(receiveSearchResults(response.data.results))
             })
             .catch((err) => {
                 dispatch(searchError(err))
