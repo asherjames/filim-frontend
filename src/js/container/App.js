@@ -10,6 +10,7 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 import MainTabs from '../components/MainTabs'
 import SearchButtonContainer from './SearchButtonContainer'
+import FilmListContainer from './FilmListContainer'
 
 export default class App extends Component {
 
@@ -27,6 +28,7 @@ export default class App extends Component {
                         <MainTabs/>
                     </Paper>
                     <SearchButtonContainer/>
+                    <FilmListContainer/>
                     <Footer/>
                 </div>
             </MuiThemeProvider>

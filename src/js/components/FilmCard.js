@@ -4,20 +4,20 @@ import FlatButton from 'material-ui/FlatButton'
 
 export default class FilmCard extends React.Component {
 
-	constructor(props) {
-		super(props)
-		this.state = {
-			expanded: false,
-		}
-	}
-
-	handleExpandChange = (expanded) => {
-	    this.setState({expanded: expanded})
+    constructor(props) {
+        super(props)
+        this.state = {
+            expanded: false,
+        }
     }
 
-	render() {
-		return(
-			<Card expanded={this.state.expanded} onExpandChange={this.handleExpandChange}>
+    handleExpandChange(expanded) {
+        this.setState({expanded: expanded})
+    }
+
+    render() {
+        return (
+            <Card expanded={this.state.expanded} onExpandChange={this.handleExpandChange.bind(this)}>
                 <CardHeader
                     title={this.props.title}
                     subtitle={this.props.year}
@@ -26,20 +26,19 @@ export default class FilmCard extends React.Component {
                     showExpandableButton={true}
                 />
                 <CardText>
-                    <FlatButton label="More info..." onTouchTap={this.handleExpandChange(true)} disabled={!this.state.expanded}/>
+                    <FlatButton label="More info..." onClick={() => this.handleExpandChange(true).bind(this)}
+                                disabled={this.state.expanded}/>
                 </CardText>
-                <CardMedia
-                    expandable={true}
-                >
+                <CardMedia expandable={true}>
                     <img src={this.props.largeImage}/>
                 </CardMedia>
                 <CardTitle title={this.props.title} expandable={true}/>
                 <CardText expandable={true}>
                     {this.props.mainText}
                 </CardText>
-			</Card>
-		)
-	}
+            </Card>
+        )
+    }
 }
 
 FilmCard.propTypes = {
