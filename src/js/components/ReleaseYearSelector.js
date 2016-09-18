@@ -7,8 +7,8 @@ export default class ReleaseYearSelector extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            fromYear: this.props.years[0],
-            toYear: this.props.years[0]
+            fromYear: 0,
+            toYear: 0
         }
     }
 
@@ -28,6 +28,7 @@ export default class ReleaseYearSelector extends React.Component {
                 <DropDownMenu
                     onChange={this.handleFromChange.bind(this)}
                     value={this.state.fromYear}>
+                    <MenuItem value={0} key={0} primaryText={"Min year..."} disabled={true}/>
                     {this.props.years.map(year =>
                         <MenuItem value={year} key={year} primaryText={year}/>
                     )}
@@ -35,6 +36,7 @@ export default class ReleaseYearSelector extends React.Component {
                 <DropDownMenu
                     onChange={this.handleToChange.bind(this)}
                     value={this.state.toYear}>
+                    <MenuItem value={0} key={0} primaryText={"Max year..."} disabled={true}/>
                     {this.props.years.map(year =>
                         <MenuItem value={year} key={year} primaryText={year}/>
                     )}

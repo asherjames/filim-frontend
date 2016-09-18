@@ -7,7 +7,7 @@ export default class FilmCardList extends React.Component {
 
     constructor(props) {
         super(props)
-        this.largeImageUrl = `http://${Config.apiUrl}/image/5`
+        this.largeImageUrl = `http://${Config.apiUrl}/image/4`
         this.smallImageUrl = `http://${Config.apiUrl}/image/2`
     }
 
@@ -23,7 +23,7 @@ export default class FilmCardList extends React.Component {
         let cardList;
         if (this.props.films.length > 0) {
             let filmList = this.createFilmObjects()
-            cardList = filmList.map(film => <FilmCard title={film.title} year={film.date}
+            cardList = filmList.map(film => <FilmCard title={film.title} year={film.date.slice(0, 4)}
                                                       smallImage={this.smallImageUrl + film.posterImage}
                                                       largeImage={this.largeImageUrl + film.backdropImage}
                                                       mainText={film.overview}/>)

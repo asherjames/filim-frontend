@@ -29,10 +29,9 @@ export default class FilmCard extends React.Component {
                     <FlatButton label="More info..." onClick={() => this.handleExpandChange(true).bind(this)}
                                 disabled={this.state.expanded}/>
                 </CardText>
-                <CardMedia expandable={true}>
+                <CardMedia expandable={true} overlay={<CardTitle title={this.props.title} subtitle={this.props.year}/>}>
                     <img src={this.props.largeImage}/>
                 </CardMedia>
-                <CardTitle title={this.props.title} expandable={true}/>
                 <CardText expandable={true}>
                     {this.props.mainText}
                 </CardText>

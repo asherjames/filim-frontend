@@ -6,7 +6,7 @@ export default class GenreSelector extends React.Component {
 
     constructor(props) {
         super(props)
-        this.state = {genre: this.props.genres[0]}
+        this.state = {genre: 0}
     }
 
     handleChange(event, index, value) {
@@ -19,6 +19,7 @@ export default class GenreSelector extends React.Component {
             <DropDownMenu
                 onChange={this.handleChange.bind(this)}
                 value={this.state.genre}>
+                <MenuItem value={0} key={0} primaryText={"Genre..."} disabled={true}/>
                 {this.props.genres.map(genre =>
                     <MenuItem value={genre.id} key={genre.id} primaryText={genre.name}/>
                 )}
