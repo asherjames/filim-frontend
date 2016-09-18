@@ -17,7 +17,14 @@ export default class FilmCardList extends React.Component {
     createFilmObjects() {
         let filmList = []
         for (let f of this.props.films) {
-            filmList.push(new Film(f.id, f.poster_path, f.overview, f.release_date, f.original_title, f.backdrop_path))
+            filmList.push(new Film(f.id,
+                f.poster_path,
+                f.overview,
+                f.release_date,
+                f.original_title,
+                f.backdrop_path,
+                f.vote_average
+            ))
         }
         return filmList
     }
@@ -26,10 +33,12 @@ export default class FilmCardList extends React.Component {
         let cardList;
         if (this.props.films.length > 0) {
             let filmList = this.createFilmObjects()
-            cardList = filmList.map(film => <FilmCard title={film.title} year={film.date.slice(0, 4)}
+            cardList = filmList.map(film => <FilmCard key={film.key} title={film.title} year={film.date.slice(0, 4)}
                                                       smallImage={this.smallImageUrl + film.posterImage}
                                                       largeImage={this.largeImageUrl + film.backdropImage}
-                                                      mainText={film.overview}/>)
+                                                      mainText={film.overview}
+                                                      rating={film.rating}/>
+            )
         }
 
         return <div className="pure-u-1-2" style={this.listStyle}>{cardList}</div>
@@ -42,6 +51,7 @@ FilmCardList.propTypes = {
         overview: PropTypes.string,
         release_date: PropTypes.string,
         original_title: PropTypes.string,
-        backdrop_path: PropTypes.string
+        backdrop_path: PropTypes.string,
+        rating: PropTypes.number
     })).isRequired
 }

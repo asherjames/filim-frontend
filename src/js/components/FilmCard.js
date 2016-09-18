@@ -1,6 +1,7 @@
 import React, {PropTypes} from 'react'
 import {Card, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card'
 import FlatButton from 'material-ui/FlatButton'
+import RatingCircle from './RatingCircle'
 
 export default class FilmCard extends React.Component {
 
@@ -8,6 +9,15 @@ export default class FilmCard extends React.Component {
         super(props)
         this.state = {
             expanded: false,
+        }
+        this.style = {
+            margin: "10px 10px"
+        }
+        this.ratingCircleStyle = {
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "flex-start",
+            paddingLeft: "0.8em"
         }
     }
 
@@ -17,7 +27,7 @@ export default class FilmCard extends React.Component {
 
     render() {
         return (
-            <Card expanded={this.state.expanded} onExpandChange={this.handleExpandChange.bind(this)}>
+            <Card style={this.style} expanded={this.state.expanded} onExpandChange={this.handleExpandChange.bind(this)}>
                 <CardHeader
                     title={this.props.title}
                     subtitle={this.props.year}
@@ -25,10 +35,7 @@ export default class FilmCard extends React.Component {
                     actAsExpander={true}
                     showExpandableButton={true}
                 />
-                <CardText>
-                    <FlatButton label="More info..." onClick={() => this.handleExpandChange(true).bind(this)}
-                                disabled={this.state.expanded}/>
-                </CardText>
+                <RatingCircle rating={this.props.rating} style={this.ratingCircleStyle}/>
                 <CardMedia expandable={true} overlay={<CardTitle title={this.props.title} subtitle={this.props.year}/>}>
                     <img src={this.props.largeImage}/>
                 </CardMedia>
@@ -45,5 +52,6 @@ FilmCard.propTypes = {
     year: PropTypes.string.isRequired,
     smallImage: PropTypes.string.isRequired,
     largeImage: PropTypes.string.isRequired,
-    mainText: PropTypes.string.isRequired
+    mainText: PropTypes.string.isRequired,
+    rating: PropTypes.number.isRequired
 }
