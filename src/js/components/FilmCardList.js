@@ -9,6 +9,9 @@ export default class FilmCardList extends React.Component {
         super(props)
         this.largeImageUrl = `http://${Config.apiUrl}/image/4`
         this.smallImageUrl = `http://${Config.apiUrl}/image/2`
+        this.listStyle = {
+            textAlign: "left"
+        }
     }
 
     createFilmObjects() {
@@ -29,7 +32,7 @@ export default class FilmCardList extends React.Component {
                                                       mainText={film.overview}/>)
         }
 
-        return <div className="pure-u-1-2">{cardList}</div>
+        return <div className="pure-u-1-2" style={this.listStyle}>{cardList}</div>
     }
 }
 
