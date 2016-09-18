@@ -12,13 +12,13 @@ export default class RatingCircle extends React.Component {
         if (this.props.rating < 4.0) {
             this.colour = "#FF432E"
         } else if (this.props.rating < 5.0 && this.props.rating >= 4.0) {
-            this.colour = "#FFAC00"
+            this.colour = "#F7B733"
         } else if (this.props.rating < 6.0 && this.props.rating >= 5.0) {
-            this.colour = "#FFEB00"
+            this.colour = "#F7E037"
         } else if (this.props.rating < 7.0 && this.props.rating >= 6.0) {
-            this.colour = "#DBFF00"
+            this.colour = "#CAFF49"
         } else if (this.props.rating < 8.0 && this.props.rating >= 7.0) {
-            this.colour = "#1AFF00"
+            this.colour = "#48F739"
         } else if (this.props.rating >= 8.0) {
             this.colour = "#00D2FF"
         }
@@ -27,13 +27,13 @@ export default class RatingCircle extends React.Component {
     render() {
         return (
             <div style={this.props.style ? this.props.style : ""}>
-                <h6 style={this.textStyle}>{this.props.rating}</h6>
+                <h5 style={this.textStyle}>{this.props.rating.toFixed(2)}</h5>
                 <CircularProgress mode="determinate"
                                   value={this.props.rating}
                                   min={0.0}
                                   max={10.0}
                                   color={this.colour}
-                                  size={0.5}
+                                  size={0.6}
                 />
             </div>
         )
