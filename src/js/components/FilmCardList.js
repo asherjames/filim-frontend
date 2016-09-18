@@ -1,28 +1,35 @@
 import React, {PropTypes} from 'react'
 import FilmCard from './FilmCard'
 import Film from '../objects/Film'
+import {Config} from '../config/config'
 
 export default class FilmCardList extends React.Component {
 
     constructor(props) {
         super(props)
+        this.largeImageUrl = `http://${Config.apiUrl}/image/5`
+        this.smallImageUrl = `http://${Config.apiUrl}/image/2`
     }
 
     createFilmObjects() {
         let filmList = []
         for (let f of this.props.films) {
-            filmList.push(new Film(f.poster_path, f.overview, f.releaseYear, f.original_title, f.backdrop_path))
+            filmList.push(new Film(f.id, f.poster_path, f.overview, f.release_date, f.original_title, f.backdrop_path))
         }
         return filmList
     }
 
     render() {
-        let filmList = this.createFilmObjects()
-        let cardList = filmList.map(film => <FilmCard title={film.title} year={film.date}
-                                                      smallImage={film.posterImage} largeImage={film.backdropImage}
+        let cardList;
+        if (this.props.films.length > 0) {
+            let filmList = this.createFilmObjects()
+            cardList = filmList.map(film => <FilmCard title={film.title} year={film.date}
+                                                      smallImage={this.smallImageUrl + film.posterImage}
+                                                      largeImage={this.largeImageUrl + film.backdropImage}
                                                       mainText={film.overview}/>)
+        }
 
-        return <div>{cardList}</div>
+        return <div className="pure-u-1-2">{cardList}</div>
     }
 }
 

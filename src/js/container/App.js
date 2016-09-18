@@ -26,8 +26,8 @@ export default class App extends Component {
                     <Header/>
                     <Paper style={{width:800, margin: "2em auto"}} zDepth={5} rounded={true}>
                         <MainTabs/>
+                        <SearchButtonContainer/>
                     </Paper>
-                    <SearchButtonContainer/>
                     <FilmListContainer/>
                     <Footer/>
                 </div>

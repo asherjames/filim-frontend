@@ -1,5 +1,6 @@
 export default class Film {
-    constructor(posterImage, overview, date, title, backdropImage) {
+    constructor(key, posterImage, overview, date, title, backdropImage) {
+        this.key = key
         this.posterImage = posterImage
         this.overview = overview
         this.date = date
