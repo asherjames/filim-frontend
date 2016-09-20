@@ -3,7 +3,8 @@ import FilmCardList from '../components/FilmCardList'
 
 const mapStateToProps = (state) => {
     return {
-        films: state.search.searchResults
+        films: state.search.searchResults,
+        isSearching: state.search.isSearching
     }
 }
 
