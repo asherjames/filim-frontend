@@ -3,15 +3,14 @@ import CircularProgress from 'material-ui/CircularProgress'
 import FilmCard from './FilmCard'
 import {Config} from '../config/config'
 
+require('./FilmCardList.scss')
+
 export default class FilmCardList extends React.Component {
 
     constructor(props) {
         super(props)
         this.largeImageUrl = `http://${Config.apiUrl}/image/4`
         this.smallImageUrl = `http://${Config.apiUrl}/image/2`
-        this.listStyle = {
-            textAlign: "left"
-        }
     }
 
     render() {
@@ -25,10 +24,10 @@ export default class FilmCardList extends React.Component {
                                                               rating={film.vote_average}/>
             )
         } else if (this.props.isSearching) {
-            cardList = <div style={{textAlign: "center"}}><CircularProgress size={2}/></div>
+            cardList = <div className="centreAlign"><CircularProgress size={2}/></div>
         }
 
-        return <div className="pure-u-1-2" style={this.listStyle}>{cardList}</div>
+        return <div className="pure-u-1-2 leftAlign">{cardList}</div>
     }
 }
 

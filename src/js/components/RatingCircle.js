@@ -1,6 +1,8 @@
 import React, {PropTypes} from 'react'
 import CircularProgress from 'material-ui/CircularProgress'
 
+require('./RatingCircle.scss')
+
 export default class RatingCircle extends React.Component {
 
     constructor(props) {
@@ -26,8 +28,8 @@ export default class RatingCircle extends React.Component {
 
     render() {
         return (
-            <div style={this.props.style ? this.props.style : ""}>
-                <h5 style={this.textStyle}>{this.props.rating.toFixed(2)}</h5>
+            <div className="rating-circle">
+                <h5>{this.props.rating.toFixed(2)}</h5>
                 <CircularProgress mode="determinate"
                                   value={this.props.rating}
                                   min={0.0}
@@ -41,6 +43,5 @@ export default class RatingCircle extends React.Component {
 }
 
 RatingCircle.propTypes = {
-    rating: PropTypes.number.isRequired,
-    style: PropTypes.object
+    rating: PropTypes.number.isRequired
 }

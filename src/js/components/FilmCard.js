@@ -1,7 +1,8 @@
 import React, {PropTypes} from 'react'
 import {Card, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card'
-import FlatButton from 'material-ui/FlatButton'
 import RatingCircle from './RatingCircle'
+
+require('./FilmCard.scss')
 
 export default class FilmCard extends React.Component {
 
@@ -9,15 +10,6 @@ export default class FilmCard extends React.Component {
         super(props)
         this.state = {
             expanded: false,
-        }
-        this.style = {
-            margin: "10px 10px"
-        }
-        this.ratingCircleStyle = {
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "flex-start",
-            paddingLeft: "0.8em"
         }
     }
 
@@ -27,7 +19,7 @@ export default class FilmCard extends React.Component {
 
     render() {
         return (
-            <Card style={this.style} expanded={this.state.expanded} onExpandChange={this.handleExpandChange.bind(this)}>
+            <Card className="film-card" expanded={this.state.expanded} onExpandChange={this.handleExpandChange.bind(this)}>
                 <CardHeader
                     title={this.props.title}
                     subtitle={this.props.year}
@@ -35,7 +27,7 @@ export default class FilmCard extends React.Component {
                     actAsExpander={true}
                     showExpandableButton={true}
                 />
-                <RatingCircle rating={this.props.rating} style={this.ratingCircleStyle}/>
+                <RatingCircle className="rating-circle" rating={this.props.rating}/>
                 <CardMedia expandable={true} overlay={<CardTitle title={this.props.title} subtitle={this.props.year}/>}>
                     <img src={this.props.largeImage}/>
                 </CardMedia>

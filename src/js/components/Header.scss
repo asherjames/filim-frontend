@@ -1,0 +1,22 @@
+@import "../container/global";
+
+.header-container {
+  display: flex;
+  justify-content: center;
+}
+
+.header-paper {
+  height: 150px;
+  width: 800px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5%;
+  background-color: $headerGreen;
+}
+
+.header-text {
+  font-family: 'Fjalla One';
+  font-size: 400%;
+  color: $headerOrangeText;
+}
