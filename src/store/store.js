@@ -22,6 +22,11 @@ export default function configureStore() {
         search: {
             isSearching: false,
             searchResults: []
+        },
+        actorSearch: {
+            isSearching: false,
+            query: "",
+            searchResults: []
         }
     }
 
