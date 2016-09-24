@@ -5,7 +5,7 @@ var path = require('path');
 module.exports = {
     context: path.join(__dirname, "src"),
     devtool: debug ? "inline-sourcemap" : null,
-    entry: "./js/index.js",
+    entry: "./index.js",
     module: {
         loaders: [
             {
@@ -14,6 +14,7 @@ module.exports = {
                 loader: 'babel-loader',
                 query: {
                     presets: ['react', 'es2015'],
+                    plugins: ['transform-react-jsx-source']
                 }
             },
             {

@@ -12,6 +12,8 @@ import MainTabs from '../components/MainTabs'
 import SearchButtonContainer from './SearchButtonContainer'
 import FilmListContainer from './FilmListContainer'
 
+require('./App.scss')
+
 export default class App extends Component {
 
     componentDidMount() {
@@ -22,7 +24,7 @@ export default class App extends Component {
     render() {
         return (
             <MuiThemeProvider muiTheme={getMuiTheme()}>
-                <div style={{textAlign: "center"}}>
+                <div>
                     <Header/>
                     <Paper style={{width:800, margin: "2em auto"}} zDepth={5} rounded={true}>
                         <MainTabs/>
