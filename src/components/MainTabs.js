@@ -14,19 +14,24 @@ let tabStyle = {
 const MainTabs = () => (
     <Tabs>
         <Tab style={tabStyle} label="Basic">
-            <div className="pure-g tab-container">
-                <div className="pure-u-1-3">
+            <div className="tab-container">
+                <div className="tab">
                     <GenreList/>
                 </div>
-                <div className="pure-u-1-3">
+                <div className="tab">
                     <MovieTvContainer/>
                 </div>
-                <div className="pure-u-1-3">
+                <div className="tab">
                     <ReleaseYearContainer/>
                 </div>
             </div>
         </Tab>
         <Tab style={tabStyle} label="Advanced">
+            <div className="tab-container">
+                <div className="tab">
+
+                </div>
+            </div>
         </Tab>
     </Tabs>
 )
