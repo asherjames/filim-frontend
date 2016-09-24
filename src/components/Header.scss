@@ -1,8 +1,10 @@
 @import "../container/global";
+@import url('https://fonts.googleapis.com/css?family=Baloo+Bhaina');
 
 .header-container {
   display: flex;
   justify-content: center;
+  margin: 2em;
 }
 
 .header-paper {
@@ -12,11 +14,11 @@
   align-items: center;
   justify-content: center;
   border-radius: 5%;
-  background-color: $headerGreen;
+  background-color: $offWhite;
 }
 
 .header-text {
-  font-family: 'Fjalla One';
+  font-family: 'Baloo Bhaina', cursive;
   font-size: 400%;
-  color: $headerOrangeText;
+  color: $pinkyRed;
 }

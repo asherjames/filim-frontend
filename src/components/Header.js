@@ -5,12 +5,12 @@ require('./Header.scss')
 
 const paperStyle = {
     borderRadius: 5,
-	backgroundColor: '#00D49E'
+	backgroundColor: '#EFFFF3'
 }
 
 const Header = () => (
 	<div className="header-container">
-		<Paper className="header-paper" style={paperStyle} zDepth={4} rounded={true}>
+		<Paper className="header-paper" style={paperStyle} zDepth={3} rounded={true}>
 			<h1 className="header-text">Filim</h1>
 		</Paper>	
 	</div>

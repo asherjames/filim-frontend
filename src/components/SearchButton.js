@@ -10,7 +10,8 @@ const SearchButton = ({onSearchClick}) => (
             className="search-button"
             label="Search..."
             icon={<Search/>}
-            backgroundColor="#00D49E"
+            backgroundColor="#FF5252"
+            labelColor="#ffffff"
             onClick={onSearchClick}
         />
     </div>

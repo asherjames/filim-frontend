@@ -1,3 +1,8 @@
+@import "../container/global";
+
 .film-card {
   margin: 10px 10px;
+  max-height: 200px;
+  flex-grow: 1;
+  flex-shrink: 1;
 }

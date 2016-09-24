@@ -26,10 +26,12 @@ export default class App extends Component {
             <MuiThemeProvider muiTheme={getMuiTheme()}>
                 <div>
                     <Header/>
-                    <Paper style={{width:800, margin: "2em auto"}} zDepth={5} rounded={true}>
-                        <MainTabs/>
-                        <SearchButtonContainer/>
-                    </Paper>
+                    <div className="paper-container">
+                        <Paper zDepth={3} rounded={true}>
+                            <MainTabs/>
+                            <SearchButtonContainer/>
+                        </Paper>
+                    </div>
                     <FilmListContainer/>
                     <Footer/>
                 </div>

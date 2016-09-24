@@ -24,10 +24,10 @@ export default class FilmCardList extends React.Component {
                                                               rating={film.vote_average}/>
             )
         } else if (this.props.isSearching) {
-            cardList = <div className="centreAlign"><CircularProgress size={2}/></div>
+            cardList = <div className="centreAlign"><CircularProgress color="#FF5252" size={2}/></div>
         }
 
-        return <div className="pure-u-1-2 leftAlign">{cardList}</div>
+        return <div className="card-container">{cardList}</div>
     }
 }
 
