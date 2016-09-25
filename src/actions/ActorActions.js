@@ -1,13 +1,13 @@
 import axios from 'axios'
 const qs = require('query-string')
-import Config from '../config/config'
+import {Config} from '../config/config'
 
 export const BEGIN_SEARCH_ACTORS = 'BEGIN_SEARCH_ACTORS'
 export const FETCH_ACTORS_ERROR = 'FETCH_ACTORS_ERROR'
 export const RECEIVE_ACTORS = 'RECEIVE_ACTORS'
 export const ACTOR_SELECTED = 'ACTOR_SELECTED'
 
-export function actionSelected(id) {
+export function actorSelected(id) {
     return {
         type: ACTOR_SELECTED,
         payload: id
@@ -34,14 +34,12 @@ export function receiveActors(actors) {
     }
 }
 
-export function fetchActors() {
+export function fetchActors(searchTerm) {
     return(dispatch, getState) => {
         dispatch(beginSearchActors())
 
-        const query = getState().actorSearch.query
-
         axios.get(`${Config.apiUrl}/search/actor?` + qs.stringify({
-                query
+                searchTerm
             }))
             .then((data) => {
                 dispatch(receiveActors(data))

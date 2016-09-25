@@ -3,6 +3,7 @@ import {Tabs, Tab} from 'material-ui/Tabs'
 import GenreList from '../container/GenreList'
 import MovieTvContainer from '../container/MovieTvContainer'
 import ReleaseYearContainer from '../container/ReleaseYearContainer'
+import ActorSearchContainer from '../container/ActorSearchContainer'
 
 require('./MainTabs.scss')
 
@@ -29,7 +30,7 @@ const MainTabs = () => (
         <Tab style={tabStyle} label="Advanced">
             <div className="tab-container">
                 <div className="tab">
-
+                    <ActorSearchContainer/>
                 </div>
             </div>
         </Tab>

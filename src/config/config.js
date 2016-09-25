@@ -1,3 +1,3 @@
-export default Config = {
-    apiUrl: "localhost:3000/filim-api"
+export const Config = {
+    apiUrl: "http://localhost:3000/filim-api"
 }

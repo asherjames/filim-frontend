@@ -4,7 +4,9 @@ import AutoComplete from 'material-ui/AutoComplete';
 export default class ActorSearch extends React.Component {
     constructor(props) {
         super(props)
-        this.state.dataSource = this.props.actors
+        this.state = {
+            dataSource: [{id: 1, name: "Ash"}, {id: 2, name: "R2"}]
+        }
     }
 
     render() {
@@ -12,6 +14,8 @@ export default class ActorSearch extends React.Component {
             <AutoComplete
                 hintText="With actor..."
                 dataSource={this.state.dataSource}
+                filter={AutoComplete.fuzzyFilter}
+                maxSearchResults={10}
                 onNewRequest={this.props.onSelectItem}
                 onUpdateInput={this.props.onInput}
             />
@@ -21,7 +25,7 @@ export default class ActorSearch extends React.Component {
 
 ActorSearch.propTypes = {
     actors: PropTypes.arrayOf(PropTypes.shape({
-        actorName: PropTypes.string,
+        name: PropTypes.string,
         id: PropTypes.number
     })),
     onInput: PropTypes.func.isRequired,
