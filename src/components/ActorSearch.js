@@ -4,18 +4,21 @@ import AutoComplete from 'material-ui/AutoComplete';
 export default class ActorSearch extends React.Component {
     constructor(props) {
         super(props)
-        this.state = {
-            dataSource: [{id: 1, name: "Ash"}, {id: 2, name: "R2"}]
+        this.dataSourceConfig = {
+            text: 'name',
+            value: 'id'
         }
     }
 
     render() {
         return (
             <AutoComplete
-                hintText="With actor..."
-                dataSource={this.state.dataSource}
-                filter={AutoComplete.fuzzyFilter}
+                floatingLabelText="With actor..."
+                dataSource={this.props.actors}
+                dataSourceConfig={this.dataSourceConfig}
+                openOnFocus={true}
                 maxSearchResults={10}
+                filter={AutoComplete.noFilter}
                 onNewRequest={this.props.onSelectItem}
                 onUpdateInput={this.props.onInput}
             />
