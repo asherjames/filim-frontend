@@ -12,6 +12,7 @@ const TvMovieRadioButton = ({movieTvChange}) => (
         <RadioButton
             value="tv"
             label="TV"
+            disabled={true}
         />
     </RadioButtonGroup>
 )
