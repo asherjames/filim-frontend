@@ -13,8 +13,8 @@ const mapDispatchToProps = (dispatch) => {
         onInput: (input) => {
             dispatch(fetchActors(input))
         },
-        onSelectItem: (id) => {
-            dispatch(actorSelected(id))
+        onSelectItem: (actor) => {
+            dispatch(actorSelected(actor))
         }
     }
 }
