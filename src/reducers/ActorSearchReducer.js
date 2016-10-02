@@ -19,7 +19,7 @@ export default function actorSearchReducer(state = initialState, action) {
             })
         case a.ACTOR_SELECTED:
             return Object.assign({}, state, {
-                actorIds: state.actorIds.concat(action.payload)
+                actorIds: state.selectedActors.concat(action.payload)
             })
         default:
             return state
