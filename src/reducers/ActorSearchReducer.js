@@ -3,7 +3,7 @@ import * as a from '../actions/ActorActions'
 let initialState = {
     isSearching: false,
     query: "",
-    actorIds: [],
+    selectedActors: [],
     searchResults: []
 }
 
@@ -19,7 +19,11 @@ export default function actorSearchReducer(state = initialState, action) {
             })
         case a.ACTOR_SELECTED:
             return Object.assign({}, state, {
-                actorIds: state.selectedActors.concat(action.payload)
+                selectedActors: state.selectedActors.concat(action.payload)
+            })
+        case a.ACTOR_DELETED:
+            return Object.assign({}, state, {
+                selectedActors: state.selectedActors.filter(a => a.id !== action.payload)
             })
         default:
             return state

@@ -12,7 +12,7 @@ export default class ActorChips extends React.Component {
         return (
             <div className="chip-container">
                 {this.props.actors.map(actor =>
-                    <Chip key={actor.id} className="chip" onRequestDelete={this.props.deleteActor}>
+                    <Chip key={actor.id} className="chip" onRequestDelete={() => this.props.deleteActor(actor.id)}>
                         {actor.name}
                     </Chip>
                 )}

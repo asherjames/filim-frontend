@@ -4,6 +4,7 @@ import GenreList from '../container/GenreList'
 import MovieTvContainer from '../container/MovieTvContainer'
 import ReleaseYearContainer from '../container/ReleaseYearContainer'
 import ActorSearchContainer from '../container/ActorSearchContainer'
+import ActorChipsContainer from '../container/ActorChipsContainer'
 
 require('./MainTabs.scss')
 
@@ -31,6 +32,7 @@ const MainTabs = () => (
             <div className="tab-container">
                 <div className="tab">
                     <ActorSearchContainer/>
+                    <ActorChipsContainer/>
                 </div>
             </div>
         </Tab>
