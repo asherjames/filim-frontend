@@ -1,6 +1,8 @@
 import axios from 'axios'
 const qs = require('query-string')
 
+import Config from '../config/config'
+
 export const SEARCH_CLICKED = 'SEARCH_CLICKED'
 export const BEGIN_SEARCH = 'BEGIN_SEARCH'
 export const SEARCH_ERROR = 'SEARCH_ERROR'
@@ -30,16 +32,20 @@ export function searchClicked() {
     return (dispatch, getState) => {
         dispatch(beginSearch())
 
-        const {tvOrMovie} = getState()
+        const {genres, tvOrMovie, releaseYear, search, actorSearch} = getState()
 
-        const selectedGenre = getState().genres.selectedGenre
-        const fromReleaseYear = getState().releaseYear.fromReleaseYear
-        const toReleaseYear = getState().releaseYear.toReleaseYear
+        const selectedGenre = genres.selectedGenre
 
-        axios.get(`http://localhost:3000/filim-api/search/${tvOrMovie}?` + qs.stringify({
+        const fromReleaseYear = releaseYear.fromReleaseYear
+        const toReleaseYear = releaseYear.toReleaseYear
+
+        const withActors = actorSearch.selectedActors.map(a => a.name)
+
+        axios.get(`${Config.apiUrl}/search/${tvOrMovie}?` + qs.stringify({
                 selectedGenre,
                 fromReleaseYear,
-                toReleaseYear
+                toReleaseYear,
+                withActors
             }))
             .then((response) => {
                 dispatch(receiveSearchResults(response.data.results))
