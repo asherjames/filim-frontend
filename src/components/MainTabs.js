@@ -5,6 +5,7 @@ import MovieTvContainer from '../container/MovieTvContainer'
 import ReleaseYearContainer from '../container/ReleaseYearContainer'
 import ActorSearchContainer from '../container/ActorSearchContainer'
 import ActorChipsContainer from '../container/ActorChipsContainer'
+import KeywordContainer from '../container/KeywordContainer'
 
 require('./MainTabs.scss')
 
@@ -24,7 +25,6 @@ const MainTabs = () => (
                     <MovieTvContainer/>
                 </div>
                 <div className="tab">
-                    <ReleaseYearContainer/>
                 </div>
             </div>
         </Tab>
@@ -33,6 +33,12 @@ const MainTabs = () => (
                 <div className="tab">
                     <ActorSearchContainer/>
                     <ActorChipsContainer/>
+                </div>
+                <div className="tab">
+                    <ReleaseYearContainer/>
+                </div>
+                <div className="tab">
+                    <KeywordContainer/>
                 </div>
             </div>
         </Tab>

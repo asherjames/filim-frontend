@@ -28,6 +28,9 @@ export default function configureStore() {
             query: "",
             selectedActors: [],
             searchResults: []
+        },
+        keyword: {
+            input: ""
         }
     }
 
