@@ -19,7 +19,7 @@ export default class GenreSelector extends React.Component {
             <DropDownMenu
                 onChange={this.handleChange.bind(this)}
                 value={this.state.genre}>
-                <MenuItem value={0} key={0} primaryText={"Genre..."} disabled={true}/>
+                <MenuItem value={0} key={0} primaryText="Genre..." disabled={true}/>
                 {this.props.genres.map(genre =>
                     <MenuItem value={genre.id} key={genre.id} primaryText={genre.name}/>
                 )}
