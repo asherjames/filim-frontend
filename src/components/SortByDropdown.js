@@ -17,12 +17,14 @@ export default class SortByDropdown extends React.Component {
 
     render() {
         return (
-            <DropDownMenu
-                onChange={this.handleChange}
-                value={this.state.sorter}>
+            <DropDownMenu onChange={this.handleChange} value={this.state.sorter}>
                 <MenuItem value={0} key={0} primaryText="Sort by..." disabled={true}/>
                 {this.props.sorters.map(sorter =>
-                    <MenuItem value={sorter.id} key={sorter.id} primaryText={sorter.name}/>
+                    <MenuItem value={sorter.id}
+                              key={sorter.id}
+                              primaryText={sorter.name}
+                              leftIcon={sorter.icon ? sorter.icon : ''}
+                    />
                 )}
             </DropDownMenu>
         )
@@ -32,7 +34,8 @@ export default class SortByDropdown extends React.Component {
 SortByDropdown.propTypes = {
     sorters: PropTypes.arrayOf(PropTypes.shape({
         id: PropTypes.string.isRequired,
-        name: PropTypes.string.isRequired
+        name: PropTypes.string.isRequired,
+        icon: PropTypes.string
     }).isRequired).isRequired,
     onSorterClick: PropTypes.func.isRequired
 }
