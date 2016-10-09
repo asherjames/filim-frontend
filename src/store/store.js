@@ -31,6 +31,9 @@ export default function configureStore() {
         },
         keyword: {
             input: ""
+        },
+        sortBy: {
+            sorter: ""
         }
     }
 

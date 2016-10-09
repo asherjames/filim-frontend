@@ -4,6 +4,7 @@ import genreReducer from './GenreReducer'
 import keywordReducer from './KeywordReducer'
 import relYearReducer from './RelYearReducer'
 import searchReducer from './SearchReducer'
+import sortByReducer from './SortByReducer'
 import tvMovieReducer from './TvMovieReducer'
 
 export default combineReducers({
@@ -12,5 +13,6 @@ export default combineReducers({
     releaseYear: relYearReducer,
     search: searchReducer,
     actorSearch: actorSearchReducer,
-    keyword: keywordReducer
+    keyword: keywordReducer,
+    sortBy: sortByReducer
 })
