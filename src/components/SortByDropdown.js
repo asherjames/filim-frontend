@@ -59,7 +59,7 @@ export default class SortByDropdown extends React.Component {
             {
                 id: 'vote_count.desc',
                 name: 'Number of votes',
-                asc: true
+                asc: false
             }
         ]
     }
@@ -77,7 +77,7 @@ export default class SortByDropdown extends React.Component {
                     <MenuItem value={sorter.id}
                               key={sorter.id}
                               primaryText={sorter.name}
-                              leftIcon={sorter.asc ? <NavigationArrowUpward/> : <NavigationArrowDownward/>}
+                              rightIcon={sorter.asc ? <NavigationArrowUpward/> : <NavigationArrowDownward/>}
                     />
                 )}
             </DropDownMenu>

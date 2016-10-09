@@ -1,11 +1,13 @@
 import React from 'react'
 import {Tabs, Tab} from 'material-ui/Tabs'
+
+import ActorChipsContainer from '../container/ActorChipsContainer'
+import ActorSearchContainer from '../container/ActorSearchContainer'
 import GenreList from '../container/GenreList'
+import KeywordContainer from '../container/KeywordContainer'
 import MovieTvContainer from '../container/MovieTvContainer'
 import ReleaseYearContainer from '../container/ReleaseYearContainer'
-import ActorSearchContainer from '../container/ActorSearchContainer'
-import ActorChipsContainer from '../container/ActorChipsContainer'
-import KeywordContainer from '../container/KeywordContainer'
+import SortByContainer from '../container/SortByContainer'
 
 require('./MainTabs.scss')
 
@@ -25,6 +27,7 @@ const MainTabs = () => (
                     <MovieTvContainer/>
                 </div>
                 <div className="tab">
+                    <SortByContainer/>
                 </div>
             </div>
         </Tab>
