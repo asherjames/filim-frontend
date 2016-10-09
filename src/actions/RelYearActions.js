@@ -1,5 +1,7 @@
 import axios from 'axios'
 
+import {config} from '../config/config'
+
 export const BEGIN_FETCH_YEARS = 'BEGIN_FETCH_YEARS'
 export const RECEIVE_YEARS = 'RECEIVE_YEARS'
 export const TO_RELEASE_CHANGED = 'TO_RELEASE_CHANGED'
@@ -42,7 +44,7 @@ export function fetchReleaseYearsError(err) {
 export function fetchReleaseYears() {
     return (dispatch) => {
         dispatch(beginFetchReleaseYears())
-        axios.get("http://localhost:3000/filim-api/allyears")
+        axios.get(`${config.apiUrl}/allyears`)
             .then((response) => {
                 dispatch(receiveYears(response.data))
             })

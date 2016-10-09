@@ -1,7 +1,7 @@
 import React, {PropTypes} from 'react'
 import CircularProgress from 'material-ui/CircularProgress'
 import FilmCard from './FilmCard'
-import {Config} from '../config/config'
+import {config} from '../config/config'
 
 require('./FilmCardList.scss')
 
@@ -9,8 +9,8 @@ export default class FilmCardList extends React.Component {
 
     constructor(props) {
         super(props)
-        this.largeImageUrl = `http://${Config.apiUrl}/image/4`
-        this.smallImageUrl = `http://${Config.apiUrl}/image/2`
+        this.largeImageUrl = `http://${config.apiUrl}/image/4`
+        this.smallImageUrl = `http://${config.apiUrl}/image/2`
     }
 
     render() {

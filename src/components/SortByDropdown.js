@@ -9,7 +9,7 @@ export default class SortByDropdown extends React.Component {
 
     constructor(props) {
         super(props)
-        this.state = {sorter: ''}
+        this.state = {sorter: 0}
         this.sorters = [
             {
                 id: 'popularity.asc',
@@ -71,13 +71,17 @@ export default class SortByDropdown extends React.Component {
 
     render() {
         return (
-            <DropDownMenu onChange={this.handleChange} value={this.state.sorter}>
+            <DropDownMenu onChange={this.handleChange.bind(this)} value={this.state.sorter}>
                 <MenuItem value={0} key={0} primaryText="Sort by..." disabled={true}/>
                 {this.sorters.map(sorter =>
                     <MenuItem value={sorter.id}
                               key={sorter.id}
                               primaryText={sorter.name}
-                              rightIcon={sorter.asc ? <NavigationArrowUpward/> : <NavigationArrowDownward/>}
+                              rightIcon={
+                                  sorter.asc ?
+                                      <NavigationArrowUpward/> :
+                                      <NavigationArrowDownward/>
+                              }
                     />
                 )}
             </DropDownMenu>

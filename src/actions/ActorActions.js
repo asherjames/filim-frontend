@@ -1,6 +1,6 @@
 import axios from 'axios'
 const qs = require('query-string')
-import {Config} from '../config/config'
+import {config} from '../config/config'
 
 export const BEGIN_SEARCH_ACTORS = 'BEGIN_SEARCH_ACTORS'
 export const FETCH_ACTORS_ERROR = 'FETCH_ACTORS_ERROR'
@@ -46,7 +46,7 @@ export function fetchActors(searchTerm) {
     return(dispatch, getState) => {
         dispatch(beginSearchActors())
 
-        axios.get(`${Config.apiUrl}/search/actor?` + qs.stringify({
+        axios.get(`${config.apiUrl}/search/actor?` + qs.stringify({
                 searchTerm
             }))
             .then((data) => {
