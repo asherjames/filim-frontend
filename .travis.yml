@@ -1,0 +1,23 @@
+language: node_js
+node_js:
+  - "6"
+cache:
+  directories:
+    - node_modules
+env:
+  - NODE_ENV=production
+before_install:
+  - sed -i -e 's/localhost:3000/moviedb-api-wrapper.herokuapp.com/' src/config/config.js
+before_deploy:
+  - npm run build
+deploy:
+  provider: s3
+  access_key_id: $S3_ACCESS_KEY
+  secret_access_key: $S3_SECRET_KEY
+  bucket: "filim"
+  skip_cleanup: true
+  acl: public_read
+  region: ap-southeast-2
+  local_dir: dist
+  on:
+    branch: master
