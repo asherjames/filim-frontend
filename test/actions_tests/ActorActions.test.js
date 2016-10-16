@@ -1,4 +1,9 @@
 import * as actions from '../../src/actions/ActorActions'
+import {config} from '../../src/config/config'
+
+import configureMockStore from 'redux-mock-store'
+import thunk from 'redux-thunk'
+import nock from 'nock'
 
 describe('Actor actions', () => {
     const actor = {

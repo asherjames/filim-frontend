@@ -1,7 +1,7 @@
 import axios from 'axios'
 const qs = require('query-string')
 
-import Config from '../config/config'
+import {config} from '../config/config'
 
 export const BEGIN_SEARCH = 'BEGIN_SEARCH'
 export const SEARCH_ERROR = 'SEARCH_ERROR'
