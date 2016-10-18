@@ -37,12 +37,11 @@ export function fetchGenresError(err) {
 export function fetchMovieGenres() {
     return (dispatch) => {
         dispatch(beginFetchGenres())
-        axios.get(`${config.apiUrl}/movies/genres`)
-            .then((response) => {
-                dispatch(receiveGenres(response.data))
-            })
-            .catch((err) => {
-                dispatch(fetchGenresError(err))
-            })
+
+        let url = `${config.apiUrl}/movies/genres`
+
+        axios.get(url)
+            .then(response => dispatch(receiveGenres(response.data)))
+            .catch((err) => dispatch(fetchGenresError(err)))
     }
 }

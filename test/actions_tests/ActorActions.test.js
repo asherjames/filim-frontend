@@ -29,3 +29,31 @@ describe('Actor actions', () => {
         expect(actions.actorDeleted(actor)).toEqual(expectedAction)
     })
 })
+
+// describe('Async actor actions', () => {
+//     const middlewares = [thunk]
+//     const mockStore = configureMockStore(middlewares)
+//
+//     afterEach(() => {
+//         nock.cleanAll()
+//     })
+//
+//     it('creates RECEIVE_ACTORS when fetching actors is completed', () => {
+//         nock(`${config.apiUrl}/search/actor`)
+//             .log(console.log)
+//             .get('/search/actor')
+//             .query({searchTerm: "Sean"})
+//             .reply(200, {data: [{"name": "Sean Connery", "id": 123}]})
+//
+//         const expectedActions = [
+//             {type: actions.BEGIN_SEARCH_ACTORS},
+//             {type: actions.RECEIVE_ACTORS, payload: {data: [{"name": "Sean Connery", "id": 123}]}}
+//         ]
+//
+//         const store = mockStore({actorSearch: {searchResults: []}})
+//
+//         store.dispatch(actions.fetchActors("Sean"))
+//
+//         expect(store.getActions()).toEqual(expectedActions)
+//     })
+// })

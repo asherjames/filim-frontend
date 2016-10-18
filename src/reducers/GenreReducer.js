@@ -1,33 +1,28 @@
-import {
-    GENRE_SELECTED,
-    FETCH_GENRES,
-    FETCH_GENRES_ERROR,
-    RECEIVE_MOVIE_GENRES
-} from '../actions/GenreActions'
+import * as a from '../actions/GenreActions'
 
-let initialState = {
+const initialState = {
     movieGenres: [],
     tvGenres: [],
-    isFetchingMovieGenres: false,
-    isFetchingTvGenres: false
+    selectedGenre: 0,
+    isFetchingGenres: false
 }
 
 export default function genreReducer(state = initialState, action) {
     switch (action.type) {
-        case GENRE_SELECTED:
+        case a.GENRE_SELECTED:
             return Object.assign({}, state, {
                 selectedGenre: action.payload
             })
-        case RECEIVE_MOVIE_GENRES:
+        case a.RECEIVE_MOVIE_GENRES:
             return Object.assign({}, state, {
                 movieGenres: action.payload,
                 isFetchingGenres: false
             })
-        case FETCH_GENRES:
+        case a.BEGIN_FETCH_GENRES:
             return Object.assign({}, state, {
                 isFetchingGenres: true
             })
-        case FETCH_GENRES_ERROR:
+        case a.FETCH_GENRES_ERROR:
             return Object.assign({}, state, {
                 isFetchingGenres: false
             })

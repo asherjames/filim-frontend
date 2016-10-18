@@ -46,14 +46,10 @@ export function fetchActors(searchTerm) {
     return(dispatch, getState) => {
         dispatch(beginSearchActors())
 
-        axios.get(`${config.apiUrl}/search/actor?` + qs.stringify({
-                searchTerm
-            }))
-            .then((data) => {
-                dispatch(receiveActors(data))
-            })
-            .catch((err) => {
-                dispatch(fetchActorsError(err))
-            })
+        let url = `${config.apiUrl}/search/actor?` + qs.stringify({searchTerm})
+
+        axios.get(url)
+            .then(data => dispatch(receiveActors(data)))
+            .catch(err => dispatch(fetchActorsError(err)))
     }
 }

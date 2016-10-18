@@ -21,6 +21,7 @@ export default class ActorSearch extends React.Component {
                 filter={AutoComplete.noFilter}
                 onNewRequest={this.props.onSelectItem}
                 onUpdateInput={this.props.onInput}
+                textFieldStyle={{width: "150px"}}
             />
         )
     }
