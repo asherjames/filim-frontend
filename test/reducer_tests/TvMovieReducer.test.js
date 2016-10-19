@@ -15,7 +15,7 @@ describe('TV/Movie reducer', () => {
             type: actions.TOGGLE_TV_MOVIE,
             payload: "tv"
         })).toEqual({
-                tvOrMovie: "movie"
+                tvOrMovie: "tv"
             }
         )
     })
