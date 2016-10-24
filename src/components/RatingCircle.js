@@ -29,7 +29,7 @@ export default class RatingCircle extends React.Component {
     render() {
         return (
             <div className="rating-circle">
-                <h5>{this.props.rating.toFixed(2)}</h5>
+                <h5>{this.props.rating > 0.00 ? this.props.rating.toFixed(2) : "No rating"}</h5>
                 <CircularProgress mode="determinate"
                                   value={this.props.rating}
                                   min={0.0}

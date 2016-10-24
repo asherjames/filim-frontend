@@ -9,8 +9,8 @@ export default class FilmCardList extends React.Component {
 
     constructor(props) {
         super(props)
-        this.largeImageUrl = `http://${config.apiUrl}/image/4`
-        this.smallImageUrl = `http://${config.apiUrl}/image/2`
+        this.largeImageUrl = `${config.apiUrl}/image/4`
+        this.smallImageUrl = `${config.apiUrl}/image/2`
     }
 
     render() {

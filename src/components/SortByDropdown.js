@@ -32,16 +32,6 @@ export default class SortByDropdown extends React.Component {
                 asc: false
             },
             {
-                id: 'original_title.asc',
-                name: 'Title',
-                asc: true
-            },
-            {
-                id: 'original_title.desc',
-                name: 'Title',
-                asc: false
-            },
-            {
                 id: 'vote_average.asc',
                 name: 'Rating',
                 asc: true

@@ -26,16 +26,16 @@ export default class ReleaseYearSelector extends React.Component {
         return (
             <div>
                 <DropDownMenu
-                    onChange={this.handleFromChange.bind(this)}
-                    value={this.state.fromYear}>
+                    onChange={this.handleToChange.bind(this)}
+                    value={this.state.toYear}>
                     <MenuItem value={0} key={0} primaryText={"Older than..."} disabled={true}/>
                     {this.props.years.map(year =>
                         <MenuItem value={year} key={year} primaryText={year}/>
                     )}
                 </DropDownMenu>
                 <DropDownMenu
-                    onChange={this.handleToChange.bind(this)}
-                    value={this.state.toYear}>
+                    onChange={this.handleFromChange.bind(this)}
+                    value={this.state.fromYear}>
                     <MenuItem value={0} key={0} primaryText={"Newer than..."} disabled={true}/>
                     {this.props.years.map(year =>
                         <MenuItem value={year} key={year} primaryText={year}/>
