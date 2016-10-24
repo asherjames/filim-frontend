@@ -31,29 +31,33 @@ export function searchClicked() {
     return (dispatch, getState) => {
         dispatch(beginSearch())
 
-        const {genres, tvOrMovie, releaseYear, search, actorSearch, keyword, sortBy} = getState()
+        const tvOrMovie = getState().tvOrMovie.selection
 
-        const selectedGenre = genres.selectedGenre
-        const fromReleaseYear = releaseYear.fromReleaseYear
-        const toReleaseYear = releaseYear.toReleaseYear
-        // const withActors = actorSearch.selectedActors.map(a => a.name)
-        const withActors = actorSearch.selectedActors[0].id
-        const withKeyword = keyword.input
-        const withSorter = sortBy.sorter
-
-        axios.get(`${Config.apiUrl}/search/${tvOrMovie}?` + qs.stringify({
-                selectedGenre,
-                fromReleaseYear,
-                toReleaseYear,
-                withActors,
-                withKeyword,
-                withSorter
-            }))
-            .then((response) => {
-                dispatch(receiveSearchResults(response.data.results))
-            })
-            .catch((err) => {
-                dispatch(searchError(err))
-            })
+        axios.get(`${config.apiUrl}/search/${tvOrMovie}?` + determineQueryString(getState()))
+            .then(response => dispatch(receiveSearchResults(response.data.results)))
+            .catch(err => dispatch(searchError(err)))
     }
+}
+
+function determineQueryString(state) {
+    const {genres, releaseYear, actorSearch, keyword, sortBy} = state
+
+    let queryObj = {
+        selectedGenre: genres.selectedGenre,
+        fromReleaseYear: releaseYear.fromReleaseYear,
+        toReleaseYear: releaseYear.toReleaseYear,
+        withActors: actorSearch.selectedActors[0] ? actorSearch.selectedActors[0].id : "",
+        withKeyword: keyword.input,
+        withSorter: sortBy.sorter
+    }
+
+    for (let prop in queryObj) {
+        if (queryObj[prop] === null || queryObj[prop] === undefined || queryObj[prop] === "") {
+            delete queryObj[prop]
+        }else if (queryObj[prop].isArray && queryObj[prop].length === 0) {
+            delete queryObj.prop
+        }
+    }
+
+    return qs.stringify(queryObj)
 }
