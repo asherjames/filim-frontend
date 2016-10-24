@@ -3,7 +3,7 @@ import * as actions from '../../src/actions/TvMovieActions'
 
 describe('TV/Movie reducer', () => {
     const initialState = {
-        tvOrMovie: "movie"
+        selection: "movie"
     }
 
     it('should return initial state', () => {
@@ -15,7 +15,7 @@ describe('TV/Movie reducer', () => {
             type: actions.TOGGLE_TV_MOVIE,
             payload: "tv"
         })).toEqual({
-                tvOrMovie: "tv"
+                selection: "tv"
             }
         )
     })
