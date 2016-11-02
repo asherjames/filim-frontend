@@ -4,6 +4,7 @@ import * as actions from '../../src/actions/SearchActions'
 describe('Search reducer', () => {
     const initialState = {
         isSearching: false,
+        hasSearched: false,
         searchResults: []
     }
 
@@ -16,6 +17,7 @@ describe('Search reducer', () => {
             type: actions.BEGIN_SEARCH
         })).toEqual({
             isSearching: true,
+            hasSearched: true,
             searchResults: []
         })
     })
@@ -31,6 +33,7 @@ describe('Search reducer', () => {
             ]
         })).toEqual({
             isSearching: false,
+            hasSearched: true,
             searchResults: [
                 {
                     movie: "Goldfinger",

@@ -22,6 +22,7 @@ export default function configureStore() {
         },
         search: {
             isSearching: false,
+            hasSearched: false,
             searchResults: []
         },
         actorSearch: {
@@ -35,6 +36,9 @@ export default function configureStore() {
         },
         sortBy: {
             sorter: ""
+        },
+        pagination: {
+            page: 1
         }
     }
 
