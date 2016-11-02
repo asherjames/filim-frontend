@@ -23,7 +23,8 @@ export default function configureStore() {
         search: {
             isSearching: false,
             hasSearched: false,
-            searchResults: []
+            searchResults: [],
+            totalPages: 0
         },
         actorSearch: {
             isSearching: false,

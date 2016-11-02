@@ -3,7 +3,8 @@ import * as a from '../actions/SearchActions'
 const initialState = {
     isSearching: false,
     hasSearched: false,
-    searchResults: []
+    searchResults: [],
+    totalPages: 0
 }
 
 export default function searchReducer(state = initialState, action) {
@@ -17,7 +18,8 @@ export default function searchReducer(state = initialState, action) {
             return Object.assign({}, state, {
                 isSearching: false,
                 hasSearched: true,
-                searchResults: action.payload
+                searchResults: action.payload,
+                totalPages: action.payload.total_pages
             })
         default:
             return state

@@ -5,11 +5,12 @@ describe('Search reducer', () => {
     const initialState = {
         isSearching: false,
         hasSearched: false,
-        searchResults: []
+        searchResults: [],
+        totalPages: 0
     }
 
     it('should return initial state', () => {
-        expect(reducer(undefined,{})).toEqual(initialState)
+        expect(reducer(undefined, {})).toEqual(initialState)
     })
 
     it('should handle BEGIN_SEARCH', () => {
@@ -18,28 +19,32 @@ describe('Search reducer', () => {
         })).toEqual({
             isSearching: true,
             hasSearched: true,
-            searchResults: []
+            searchResults: [],
+            totalPages: 0
         })
     })
 
     it('should handle RECEIVE_SEARCH_RESULTS', () => {
         expect(reducer(undefined, {
             type: actions.RECEIVE_SEARCH_RESULTS,
-            payload: [
-                {
+            payload: {
+                results: {
                     movie: "Goldfinger",
                     year: 1964
-                }
-            ]
+                },
+                total_pages: 1,
+            }
         })).toEqual({
             isSearching: false,
             hasSearched: true,
-            searchResults: [
-                {
+            searchResults: {
+                results: {
                     movie: "Goldfinger",
                     year: 1964
-                }
-            ]
+                },
+                total_pages: 1,
+            },
+            totalPages: 1
         })
     })
 })
