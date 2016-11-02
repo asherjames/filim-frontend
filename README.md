@@ -1,4 +1,4 @@
-# filim-frontend
+# filim-frontend [![Build Status](https://travis-ci.org/asherjames/filim-frontend.svg?branch=dev)](https://travis-ci.org/asherjames/filim-frontend)
 Frontend for personal film picking web app
 
 I often spend far too long deciding on films to watch.  Why not alleviate the pain!

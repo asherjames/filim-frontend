@@ -39,7 +39,7 @@ export default function configureStore() {
             sorter: ""
         },
         pagination: {
-            page: 1
+            page: 0
         }
     }
 

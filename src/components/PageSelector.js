@@ -2,7 +2,9 @@ import React, {PropTypes} from 'react'
 import {BottomNavigation, BottomNavigationItem} from 'material-ui/BottomNavigation'
 import Paper from 'material-ui/Paper'
 
-export default class PageSelector extends React.Component {
+import {connect} from 'react-redux'
+
+class PageSelectorComponent extends React.Component {
 
     constructor(props) {
         super(props)
@@ -32,7 +34,25 @@ export default class PageSelector extends React.Component {
     }
 }
 
-PageSelector.propTypes = {
+PageSelectorComponent.propTypes = {
     numberOfPages: PropTypes.number.isRequired,
     onPageSelect: PropTypes.func.isRequired
 }
+
+const mapStateToProps = (state) => {
+    return {
+        numberOfPages: state.search.totalPages
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        onPageSelect: (index) => {
+            dispatch(pageSelected(index))
+        }
+    }
+}
+
+const PageSelector = connect(mapStateToProps, mapDispatchToProps)
+
+export default PageSelector
