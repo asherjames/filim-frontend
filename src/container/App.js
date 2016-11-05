@@ -34,7 +34,9 @@ export default class App extends Component {
                         </Paper>
                     </div>
                     <FilmListContainer/>
-                    <PageSelector/>
+                    <div className="selector-container">
+                        <PageSelector/>
+                    </div>
                     <Footer/>
                 </div>
             </MuiThemeProvider>

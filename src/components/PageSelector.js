@@ -5,6 +5,8 @@ import {connect} from 'react-redux'
 
 import {pageIndexSelected} from '../actions/PageSelectorActions'
 
+require('./PageSelector.scss')
+
 class PageSelectorComponent extends React.Component {
 
     constructor(props) {
@@ -22,12 +24,14 @@ class PageSelectorComponent extends React.Component {
     render() {
         if (this.props.display) {
             return (
-                <Paper zDepth={2} rounded={true}>
-                    <UltimatePagination currentPage={this.state.selectedIndex}
-                                        totalPages={this.props.numberOfPages}
-                                        onChange={this.select.bind(this)}
-                    />
-                </Paper>
+                <div className="selector-component">
+                    <Paper zDepth={2}>
+                        <UltimatePagination currentPage={this.state.selectedIndex}
+                                            totalPages={this.props.numberOfPages}
+                                            onChange={this.select.bind(this)}
+                        />
+                    </Paper>
+                </div>
             )
         } else {
             return null
