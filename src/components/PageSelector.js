@@ -1,36 +1,37 @@
 import React, {PropTypes} from 'react'
-import {BottomNavigation, BottomNavigationItem} from 'material-ui/BottomNavigation'
+import UltimatePagination from 'react-ultimate-pagination-material-ui'
 import Paper from 'material-ui/Paper'
-
 import {connect} from 'react-redux'
+
+import {pageIndexSelected} from '../actions/PageSelectorActions'
 
 class PageSelectorComponent extends React.Component {
 
     constructor(props) {
         super(props)
         this.state = {
-            selectedIndex: 0
+            selectedIndex: 1
         }
     }
 
-    select = (index) => {
+    select(index) {
         this.setState({selectedIndex: index})
         this.props.onPageSelect(index + 1)
     }
 
     render() {
-        return(
-            <Paper zDepth={1}>
-                <BottomNavigation>
-                    {Array(this.props.numberOfPages).fill().map((_,i) =>
-                        <BottomNavigationItem
-                            label={i + 1}
-                            onTouchTap={this.select(i + 1)}
-                        />
-                    )}
-                </BottomNavigation>
-            </Paper>
-        )
+        if (this.props.display) {
+            return (
+                <Paper zDepth={2} rounded={true}>
+                    <UltimatePagination currentPage={this.state.selectedIndex}
+                                        totalPages={this.props.numberOfPages}
+                                        onChange={this.select.bind(this)}
+                    />
+                </Paper>
+            )
+        } else {
+            return null
+        }
     }
 }
 
@@ -41,18 +42,19 @@ PageSelectorComponent.propTypes = {
 
 const mapStateToProps = (state) => {
     return {
-        numberOfPages: state.search.totalPages
+        numberOfPages: state.search.totalPages,
+        display: state.search.hasSearched
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
         onPageSelect: (index) => {
-            dispatch(pageSelected(index))
+            dispatch(pageIndexSelected(index))
         }
     }
 }
 
-const PageSelector = connect(mapStateToProps, mapDispatchToProps)
+const PageSelector = connect(mapStateToProps, mapDispatchToProps)(PageSelectorComponent)
 
 export default PageSelector

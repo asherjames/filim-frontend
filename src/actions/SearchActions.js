@@ -34,7 +34,7 @@ export function searchClicked() {
         const tvOrMovie = getState().tvOrMovie.selection
 
         axios.get(`${config.apiUrl}/search/${tvOrMovie}?` + determineQueryString(getState()))
-            .then(response => dispatch(receiveSearchResults(response.data.results)))
+            .then(response => dispatch(receiveSearchResults(response.data)))
             .catch(err => dispatch(searchError(err)))
     }
 }

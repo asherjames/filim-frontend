@@ -9,6 +9,7 @@ import {fetchReleaseYears} from '../actions/RelYearActions'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import MainTabs from '../components/MainTabs'
+import PageSelector from '../components/PageSelector'
 import SearchButtonContainer from './SearchButtonContainer'
 import FilmListContainer from './FilmListContainer'
 
@@ -33,6 +34,7 @@ export default class App extends Component {
                         </Paper>
                     </div>
                     <FilmListContainer/>
+                    <PageSelector/>
                     <Footer/>
                 </div>
             </MuiThemeProvider>

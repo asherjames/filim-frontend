@@ -38,11 +38,8 @@ describe('Search reducer', () => {
             isSearching: false,
             hasSearched: true,
             searchResults: {
-                results: {
-                    movie: "Goldfinger",
-                    year: 1964
-                },
-                total_pages: 1,
+                movie: "Goldfinger",
+                year: 1964
             },
             totalPages: 1
         })

@@ -18,7 +18,7 @@ export default function searchReducer(state = initialState, action) {
             return Object.assign({}, state, {
                 isSearching: false,
                 hasSearched: true,
-                searchResults: action.payload,
+                searchResults: action.payload.results,
                 totalPages: action.payload.total_pages
             })
         default:

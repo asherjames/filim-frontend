@@ -6,6 +6,7 @@ import relYearReducer from './RelYearReducer'
 import searchReducer from './SearchReducer'
 import sortByReducer from './SortByReducer'
 import tvMovieReducer from './TvMovieReducer'
+import pageSelectorReducer from './PageSelectorReducer'
 
 export default combineReducers({
     genres: genreReducer,
@@ -14,5 +15,6 @@ export default combineReducers({
     search: searchReducer,
     actorSearch: actorSearchReducer,
     keyword: keywordReducer,
-    sortBy: sortByReducer
+    sortBy: sortByReducer,
+    pagination: pageSelectorReducer
 })
