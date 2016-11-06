@@ -40,7 +40,7 @@ export function searchClicked() {
 }
 
 function determineQueryString(state) {
-    const {genres, releaseYear, actorSearch, keyword, sortBy} = state
+    const {genres, releaseYear, actorSearch, keyword, sortBy, pagination} = state
 
     let queryObj = {
         selectedGenre: genres.selectedGenre,
@@ -48,7 +48,8 @@ function determineQueryString(state) {
         toReleaseYear: releaseYear.toReleaseYear,
         withActors: actorSearch.selectedActors[0] ? actorSearch.selectedActors[0].id : "",
         withKeyword: keyword.input,
-        withSorter: sortBy.sorter
+        withSorter: sortBy.sorter,
+        page: pagination.page
     }
 
     for (let prop in queryObj) {

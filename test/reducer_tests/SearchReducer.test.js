@@ -18,7 +18,7 @@ describe('Search reducer', () => {
             type: actions.BEGIN_SEARCH
         })).toEqual({
             isSearching: true,
-            hasSearched: true,
+            hasSearched: false,
             searchResults: [],
             totalPages: 0
         })

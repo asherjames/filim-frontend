@@ -4,6 +4,7 @@ import Paper from 'material-ui/Paper'
 import {connect} from 'react-redux'
 
 import {pageIndexSelected} from '../actions/PageSelectorActions'
+import {searchClicked} from '../actions/SearchActions'
 
 require('./PageSelector.scss')
 
@@ -55,6 +56,7 @@ const mapDispatchToProps = (dispatch) => {
     return {
         onPageSelect: (index) => {
             dispatch(pageIndexSelected(index))
+            dispatch(searchClicked())
         }
     }
 }

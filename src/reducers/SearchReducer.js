@@ -12,7 +12,6 @@ export default function searchReducer(state = initialState, action) {
         case a.BEGIN_SEARCH:
             return Object.assign({}, state, {
                 isSearching: true,
-                hasSearched: true
             })
         case a.RECEIVE_SEARCH_RESULTS:
             return Object.assign({}, state, {
