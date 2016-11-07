@@ -2,14 +2,26 @@ import axios from 'axios'
 const qs = require('query-string')
 
 import {config} from '../config/config'
+import {pageIndexReset} from './PageSelectorActions'
 
 export const BEGIN_SEARCH = 'BEGIN_SEARCH'
+export const SEARCH_STARTED = 'SEARCH_STARTED'
 export const SEARCH_ERROR = 'SEARCH_ERROR'
 export const RECEIVE_SEARCH_RESULTS = 'RECEIVE_SEARCH_RESULTS'
 
-export function beginSearch() {
+export function searchStarted() {
     return {
-        type: BEGIN_SEARCH
+        type: SEARCH_STARTED
+    }
+}
+
+export function beginSearch() {
+    return (dispatch, getState) => {
+        const tvOrMovie = getState().tvOrMovie.selection
+
+        axios.get(`${config.apiUrl}/search/${tvOrMovie}?` + determineQueryString(getState()))
+            .then(response => dispatch(receiveSearchResults(response.data)))
+            .catch(err => dispatch(searchError(err)))
     }
 }
 
@@ -28,14 +40,10 @@ export function searchError(err) {
 }
 
 export function searchClicked() {
-    return (dispatch, getState) => {
+    return (dispatch) => {
+        dispatch(pageIndexReset())
+        dispatch(searchStarted())
         dispatch(beginSearch())
-
-        const tvOrMovie = getState().tvOrMovie.selection
-
-        axios.get(`${config.apiUrl}/search/${tvOrMovie}?` + determineQueryString(getState()))
-            .then(response => dispatch(receiveSearchResults(response.data)))
-            .catch(err => dispatch(searchError(err)))
     }
 }
 

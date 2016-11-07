@@ -13,9 +13,9 @@ describe('Search reducer', () => {
         expect(reducer(undefined, {})).toEqual(initialState)
     })
 
-    it('should handle BEGIN_SEARCH', () => {
+    it('should handle SEARCH_STARTED', () => {
         expect(reducer(undefined, {
-            type: actions.BEGIN_SEARCH
+            type: actions.SEARCH_STARTED
         })).toEqual({
             isSearching: true,
             hasSearched: false,

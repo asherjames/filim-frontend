@@ -9,7 +9,7 @@ const initialState = {
 
 export default function searchReducer(state = initialState, action) {
     switch (action.type) {
-        case a.BEGIN_SEARCH:
+        case a.SEARCH_STARTED:
             return Object.assign({}, state, {
                 isSearching: true,
             })
