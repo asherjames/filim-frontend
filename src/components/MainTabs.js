@@ -5,7 +5,6 @@ import ActorChipsContainer from '../container/ActorChipsContainer'
 import ActorSearchContainer from '../container/ActorSearchContainer'
 import GenreList from '../container/GenreList'
 import KeywordContainer from '../container/KeywordContainer'
-import MovieTvContainer from '../container/MovieTvContainer'
 import ReleaseYearContainer from '../container/ReleaseYearContainer'
 import SortByContainer from '../container/SortByContainer'
 
@@ -22,9 +21,6 @@ const MainTabs = () => (
             <div className="tab-container">
                 <div className="tab">
                     <GenreList/>
-                </div>
-                <div className="tab">
-                    <MovieTvContainer/>
                 </div>
                 <div className="tab">
                     <SortByContainer/>

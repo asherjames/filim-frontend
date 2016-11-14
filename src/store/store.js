@@ -11,9 +11,6 @@ export default function configureStore() {
             selectedGenre: 0,
             isFetchingGenres: false
         },
-        tvOrMovie: {
-            selection: "movie"
-        },
         releaseYear: {
             years: [],
             fromReleaseYear: 0,
